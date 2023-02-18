@@ -1,0 +1,103 @@
+COUPA
+
+Round 1:
+
+what are indexes. when do we use them. why they are faster.
+
+write a query to find duplicates names in employee table.
+
+write a query to find second highest salary.
+
+write a query to find how many empolyee a manger have in which employee id is used as manager id in same table. (self join)
+
+there is a url like https://mail.google.com/hash and hashed value (hash) with the long url is in database. 
+write a program to get the long url.
+
+write a alternatives for the above queries.
+
+what is diffrence between any and in.
+
+what is polymorphism.
+
+write a program o find the duplicate numbers in array. optimize it.
+
+...there were some more questions mostly therotical
+
+Do you have any questions?
+
+
+
+Round 2:
+
+Which architecture you used in your recent project.
+
+what is mvc.
+
+draw layers of your project.
+
+how you connected fron end and backend.
+
+what are components in react.
+
+what is state in react.
+
+have you used redux in your project.
+
+did you used any liberaries for authentication and authorization. how did you do it.
+
+how will you write code if you wanted to produce a list table on one component on an click event in other 
+component.
+
+what if there were multiple list tables of diffrent structure
+
+how will you handle it.
+
+write a flow code for payment which can happen through two options creadit card or upi. what will input you 
+will take and  what will you return.
+
+how will you achive loose coupling.
+
+how will you pass mode of payment information from front end because string could be unsafe.
+
+what is loose coupling.
+
+what is factory method pattern.
+
+design a lift system.
+
+which classes,variables, methods and datastructure would be present.
+
+Do you have any questions?
+
+
+Round 3:
+
+How your rounds went.
+
+what is your project.
+
+how was team structure.
+
+what did you do.
+
+challenges faced during project.(after telling one challenge there was a discussion on it).
+
+project specific questions.
+
+what is abstraction. why we use it in real life.
+
+what is interface. eg.
+
+what will be the code if you want to send email to each customer daily. optimize it.
+
+what is multithreading.
+
+what is optimistic locking.
+
+which application you use the most insta, fb etc;
+
+what you like about it. three four times same qeustion.
+
+what feature you will add in the existing applications.
+
+Do you have any questions?

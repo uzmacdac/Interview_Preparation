@@ -1,0 +1,128 @@
+
+Mahindra interview : https://www.interviewbit.com/tech-mahindra-interview-questions/amp/ 
+
+
+
+
+Coupa interview
+
+Round 1:
+
+what is data structure? which of them do you know
+
+which ds you have used in your project
+
+hashmap working 
+
+write a program to find duplex in an array
+
+dry run it
+
+optimize it further
+
+what will you do if you have to find triplex
+
+if problem occured in your project what will you do?
+
+what if login page is not working
+
+what is there in developer tools
+
+what is network tab in developer tools
+
+which kind of request do you know
+
+difference between post and put
+
+difference between put and patch
+
+The questions were related to answers I was giving.
+
+Do have any questions?
+
+
+
+Round 2:
+
+Which design pattern you have implemented in your project
+
+what is singleton pattern
+
+eager vs lazy loading in case of singleton
+
+when to use eager or lazy
+
+how can you make sigleton pattern
+
+what are basic needs to achive singleton pattern
+
+what are the ways to get singleton pattern
+
+approch for 2 problems were asked
+
+find the maximum sum of subarray
+
+fastest way to find missing number in an array of consecutive integers starting from 1
+
+pillars of OOP
+
+SOLID principles
+
+ACID properties
+
+there is a table AUDIT_LOGS (id, timestamp) whenever someone visits website this table gets updated with auto 
+genenerated id and time stamp of request. there is data of one week  
+
+wirte a query to identify busiest hour i.e. most requests in an hour
+
+and sort the data descendingly according to number of requests
+
+what is normalization
+
+Do you have any questions?
+
+
+
+Round 3:
+
+how was your day with other 2 guys
+
+did they asked about your project
+
+what is your project
+
+draw user flow diagram of your project
+
+which hashing algo you have used
+
+what is hashing
+
+do you know normalization and how did you use it in your project
+
+what is index, did you use any?
+
+have you used data abstraction
+
+what was your role in project
+
+on which part you have worked
+
+what difficulties you have faced during project 
+
+what technical difficulties you have faced during project and how did you come across solution
+
+(this question is asked 5 times consecutively)
+
+is there any conflict occured regarding flow and who was the decider
+
+conflict about technology and who was decider
+
+Do you have any questions?
+
+
+
+To sum up with all three rounds, no one is trying to trap me in unanswerable problem
+even if i couldn't answer they were helping me by providing some suggestions or by
+the means of some another sub questions. everyone is trying to maintain flow.
+
+ 

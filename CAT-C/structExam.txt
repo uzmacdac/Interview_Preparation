@@ -1,0 +1,65 @@
+https://gitlab.com/precat-oc07/aptitude.git
+
+https://gitlab.com/precat-oc07/computerfundamentalsandnetworking.git
+
+#include <stdio.h>
+struct point
+{
+	int x;
+	int y;
+};
+void print(struct point*);
+int main()
+{
+	struct point p1[] = {1, 2, 3, 4};
+	print(p1);
+}
+void print(struct point p[])
+{
+	printf("%d %d %d %d\n", p->x, ++p->x,p->y,++p->y);
+}
+
+
+https://gitlab.com/precat-oc07/computerfundamentalsandnetworking.git
+https://gitlab.com/precat-oc07/objectorientedconcepts.git
+https://gitlab.com/precat-oc07/datastructure.git
+https://gitlab.com/precat-oc07/operatingsystemconcepts.git
+
+int main()
+{
+  int n, count = 0;
+  scanf("%d", &n);
+  int arr[n], temp[n];
+  for (int i = 0; i < n; i++)
+  {
+    scanf("%d", &arr[i]);
+  }
+
+  printf("\nArray Before Removing Duplicates: ");
+  for (int i = 0; i < n; i++)
+    printf("%d ", arr[i]);
+
+  for (int i = 0; i < n; i++)
+  {
+    int j;
+    for (j = 0; j < count; j++)
+    {
+      if (arr[i] == temp[j])
+        break;
+    }
+    if (j == count)
+    {
+      temp[count] = arr[i];
+      count++;
+    }
+  }
+
+  printf("\nArray After  Removing Duplicates: ");
+  for (int i = 0; i < count; i++)
+    printf("%d ", temp[i]);
+----------------------------------------------
+while read file
+do
+    arr=(${arr[@]} $file)
+done
+echo ${#arr[@]}

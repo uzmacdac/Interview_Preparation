@@ -1,0 +1,358 @@
+
+
+--------------------------------------------
+
+Java Feature :
+
+https://ecomputernotes.com/java/what-is-java-evolution/explain-features-of-java
+
+
+Features of java
+By Dinesh Thakur
+
+
+1) Compiled and Interpreter: has both Compiled and Interpreter Feature Program of java is First Compiled and Then it is must to Interpret it .First of all The Program of java is Compiled then after Compilation it creates Bytes Codes rather than Machine Language.
+
+Then After Bytes Codes are Converted into the Machine Language is Converted into the Machine Language with the help of the Interpreter So For Executing the java Program First of all it is necessary to Compile it then it must be Interpreter
+
+2) Platform Independent: Java Language is Platform Independent means program of java is Easily transferable because after Compilation of java program bytes code will be created then we have to just transfer the Code of Byte Code to another Computer. 
+
+
+This is not necessary for computers having same Operating System in which the code of the java is Created and Executed After Compilation of the Java Program We easily Convert the Program of the java top the another Computer for Execution.
+
+3) Object-Oriented: We Know that is purely OOP Language that is all the Code of the java Language is Written into the classes and Objects So For This feature java is Most Popular Language because it also Supports Code Reusability, Maintainability etc.
+
+4) Robust and Secure: The Code of java is Robust andMeans ot first checks the reliability of the code before Execution When We trying to Convert the Higher data type into the Lower Then it Checks the Demotion of the Code the It Will Warns a User to Not to do this So it is called as Robust.
+
+Secure: When We convert the Code from One Machine to Another the First Check the Code either it is Effected by the Virus or not or it Checks the Safety of the Code if code contains the Virus then it will never Executed that code on to the Machine.
+
+
+5) Distributed: Java is Distributed Language Means because the program of java is compiled onto one machine can be easily transferred to machine and Executes them on another machine because facility of Bytes Codes So java is Specially designed For Internet Users which uses the Remote Computers For Executing their Programs on local machine after transferring the Programs from Remote Computers or either from the internet.
+
+6) Simple Small and Familiar:- is a simple Language Because it contains many features of other Languages like c and C++ and Java Removes Complexity because it doesn’t use pointers, Storage Classes and Go to Statements and java Doesn’t support Multiple Inheritance
+
+7) Multithreaded and Interactive:- Java uses Multithreaded Techniques For Execution Means Like in other in Structure Languages Code is Divided into the Small Parts Like These Code of java is divided into the Smaller parts those are Executed by java in Sequence and Timing Manner this is Called as Multithreaded In this Program of java is divided into the Small parts those are Executed by Compiler of java itself Java is Called as Interactive because Code of java Supports Also CUI and Also GUI Programs
+
+8) Dynamic and Extensible Code:- Java has Dynamic and Extensible Code Means With the Help of OOPS java Provides Inheritance and With the Help of Inheritance we Reuse the Code that is Pre-defined and Also uses all the built in Functions of java and Classes
+
+9) Distributed:- Java is a distributed language which means that the program can be design to run on computer networks. Java provides an extensive library of classes for communicating ,using TCP/IP protocols such as HTTP and FTP. This makes creating network connections much easier than in C/C++. You can read and write objects on the remote sites via URL with the same ease that programmers are used to when read and write data from and to a file. This helps the programmers at remote locations to work together on the same project.
+
+10) Secure: Java was designed with security in mind. As Java is intended to be used in networked/distributor environments so it implements several security mechanisms to protect you against malicious code that might try to invade your file system.
+
+For example: The absence of pointers in Java makes it impossible for applications to gain access to memory locations without proper authorization as memory allocation and referencing model is completely opaque to the programmer and controlled entirely by the underlying run-time platform .
+
+11) Architectural Neutral: One of the key feature of Java that makes it different from other programming languages is architectural neutral (or platform independent). This means that the programs written on one platform can run on any other platform without having to rewrite or recompile them. In other words, it follows ‘Write-once-run-anywhere’ approach. 
+
+Java programs are compiled into byte-code format which does not depend on any machine architecture but can be easily translated into a specific machine by a Java Virtual Machine (JVM) for that machine. This is a significant advantage when developing applets or applications that are downloaded from the Internet and are needed to run on different systems.
+
+12) Portable : The portability actually comes from architecture-neutrality. In C/C++, source code may run slightly differently on different hardware platforms because of how these platforms implement arithmetic operations. In Java, it has been simplified.
+
+Unlike C/C++, in Java the size of the primitive data types are machine independent. For example, an int in Java is always a 32-bit integer, and float is always a 32-bit IEEE 754 floating point number. These consistencies make Java programs portable among different platforms such as Windows, Unix and Mac .
+
+13) Interpreted : Unlike most of the programming languages which are either complied or interpreted, Java is both complied and interpreted The Java compiler translates a java source file to bytecodes and the Java interpreter executes the translated byte codes directly on the system that implements the Java Virtual Machine. These two steps of compilation and interpretation allow extensive code checking and improved security .
+
+14) High performance: Java programs are complied to portable intermediate form know as bytecodes, rather than to native machine level instructions and JVM executes Java bytecode on. Any machine on which it is installed. This architecture means that Java programs are faster than program or scripts written in purely interpreted languages but slower than C and C++ programs that compiled to native machine languages.
+
+Although in the early releases of Java, the interpretation of by bytecode resulted in slow performance but the advance version of JVM uses the adaptive and Just in time (JIT) compilation technique that improves performance by converting Java bytecodes to native machine instructions on the fly.
+
+You’ll also like:
+
+---------------------------------------------------------
+*) When to use an interface
+
+If the functionality we are creating will be useful across a wide range of disparate objects, use an interface. Abstract classes should be used primarily for objects that are closely related, whereas interfaces are best suited for providing a common functionality to unrelated classes.
+Interfaces are a good choice when we think that the API will not change for a while.
+Interfaces are also good when we want to have something similar to multiple inheritances since we can implement multiple interfaces.
+If we are designing small, concise bits of functionality, use interfaces. If we are designing large functional units, use an abstract class.
+---------------------------------------------------------
+*) When to use an abstract class
+
+An abstract class is a good choice if we are using the inheritance concept since it provides a common base class implementation to derived classes.
+An abstract class is also good if we want to declare non-public members. In an interface, all methods must be public.
+If we want to add new methods in the future, then an abstract class is a better choice. Because if we add new methods to an interface, then all of the classes that already implemented that interface will have to be changed to implement the new methods.
+If we want to create multiple versions of our component, create an abstract class. Abstract classes provide a simple and easy way to version our components. By updating the base class, all inheriting classes are automatically updated with the change. Interfaces, on the other hand, cannot be changed once created. If a new version of an interface is required, we must create a whole new interface.
+Abstract classes have the advantage of allowing better forward compatibility. Once clients use an interface, we cannot change it; if they use an abstract class, we can still add behavior without breaking the existing code.
+If we want to provide common, implemented functionality among all implementations of our component, use an abstract class. Abstract classes allow us to partially implement our class, whereas interfaces contain no implementation for any members.
+
+
+--------------------------------------------
+
+Call by value OR pass by value in Java :
+
+https://cs-fundamentals.com/java-programming/java-call-by-value-call-by-reference.php
+
+------------------------------------
+Why Does The final Keyword Prevent Overriding?
+
+In the beginning, it was discussed that methods to be Overridden follow Dynamic Method Dispatch (late binding)But the methods which are declared as final follow static binding (early binding), which means that the method definition will be grouped with a body at compile-time itself.
+
+In other words, JVM must know exactly which method to call at compile-time.To accomplish this, for every final method definition there must be a unique body. But if Overriding is allowed then there can be multiple bodies for a method definition and then the compiler won’t be able to choose one of them.
+
+This issue is seen in the above example where we have two bodies each for add and subtract methods. This prompts the compiler to throw an error at compile-time. In this way, the final keyword prevents Overriding and guards the semantics of a method.
+--------------------------------------------------------------------------------------------------------------
+Why do we use an Interface?
+
+It is used to achieve total abstraction.
+Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances.
+It is also used to achieve loose coupling.
+Interfaces are used to implement abstraction. So the question arises why use interfaces when we have abstract classes?
+The reason is, abstract classes may contain non-final variables, whereas variables in the interface are final, public and static.
+
+// A simple interface
+
+interface Player
+{
+    final int id = 10;
+    int move();
+}---------------------------------------------------------------------------------------------------------------
+
+MySQL View
+A view is a database object that has no values. Its contents are based on the base table. It contains rows and columns similar to the real table. In MySQL, the View is a virtual table created by a query by joining one or more tables. It is operated similarly to the base table but does not contain any data of its own. The View and table have one main difference that the views are definitions built on top of other tables (or views). If any changes occur in the underlying table, the same changes reflected in the View also.
+
+MySQL
+allows us to create a view in mainly two ways:
+
+MySQL Command line client
+MySQL Workbench
+-------------------------------------------------------
+
+
+Types of Polymorphism in Java
+Basically, there are two types of polymorphism in java. They are:
+
+1. Static polymorphism
+2. Dynamic polymorphism
+
+
+Static Polymorphism in Java
+A polymorphism that exhibited during compilation is called static polymorphism in java. In static polymorphism, the behavior of a method is decided at compile-time.
+
+Hence, Java compiler binds method calls with method definition/body during compilation. Therefore, this type of polymorphism is also called compile-time polymorphism in Java.
+
+
+
+
+
+------------------------------------------------------
+even if we extend a thread class or even if we implement runnable interface anywat we are going to override run() method.... so in both the cases if we  are overriding run() method then why waste extend keyward….?
+
+---------------------------------------------------------------------------------------------------------------
+ * What are the differences between abstract class and interface?
+---------------------------------------------------------------------------------------------------------------
+	Abstract class						   |		Interface
+---------------------------------------------------------------------------------------------------------------
+1 An abstract class can have a method body (non-abstract methods). | 1 The interface has only abstract  methods.
+---------------------------------------------------------------------------------------------------------------
+An abstract class can have instance variables.	                   | 2  An interface cannot have instance                                                                          |    variables.
+---------------------------------------------------------------------------------------------------------------
+3 An abstract class can have the constructor.	                   | 3 The interface cannot have the                                                                               |    constructor.
+---------------------------------------------------------------------------------------------------------------
+4 An abstract class can have static methods.	                   | 4 The interface cannot have static                                                                            |      methods.
+---------------------------------------------------------------------------------------------------------------
+5 You can extend one abstract class.	                           | 5 You can implement multiple interfaces.
+---------------------------------------------------------------------------------------------------------------
+6 The abstract class can provide the implementation of the         | 6 The Interface can't provide the                         interface.	                                   |    implementation of the abstract class.
+--------------------------------------------------------------------------------------------------------------                                                                                  
+7 The abstract keyword is used to declare an abstract class.	   | 7 The interface keyword is used to declare                                                                    |   an interface.
+---------------------------------------------------------------------------------------------------------------
+8 An abstract class can extend another Java class and              | 8 An interface can extend another Java   implement multiple Java interfaces.	.                          |   interface only
+---------------------------------------------------------------------------------------------------------------
+9 An abstract class can be extended using keyword extends	   | 9 An interface class can be implemented                                                                       |   using keyword implements
+---------------------------------------------------------------------------------------------------------------
+10 A Java abstract class can have class members .	           | 10 Members of a Java interface are public   like private, protected, etc                                      |      by default.
+---------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+ * Can we declare an abstract method final or static in java?
+
+
+If you declare a method in a class abstract to use it, you must override this method in the subclass. But, overriding is not possible with static methods. Therefore, an abstract method cannot be static.
+
+
+-----------------------------------------------------------------------------------------------------------
+ * compile-time polymorphism  vs	Runtime polymorphism
+------------------------------------------------------------------------------------------------------------
+1	In compile-time polymorphism, call to a method is resolved at compile-time.
+1	In runtime polymorphism, call to an overridden method is resolved at runtime.
+--------------------------------------------------------------------------------------------------------------
+2	It is also known as static binding, early binding, or overloading.	
+2	It is also known as dynamic binding, late binding, overriding, or dynamic method dispatch.
+--------------------------------------------------------------------------------------------------------------
+3	Overloading is a way to achieve compile-time polymorphism in which, we can define multiple methods or           constructors with different signatures.
+3	Overriding is a way to achieve runtime polymorphism in which, we can redefine some particular method or         variable in the derived class. By using overriding, we can give some specific implementation to the         base class properties in the derived class.
+-------------------------------------------------------------------------------------------------------------
+
+4	It provides fast execution because the type of an object is determined at compile-time.
+4	It provides slower execution as compare to compile-time because the type of an object is determined at         run-time.
+-----------------------------------------------------------------------------------------------------------
+5	Compile-time polymorphism provides less flexibility because all the things are resolved at compile-         time.	
+5	Run-time polymorphism provides more flexibility because all the things are resolved at runtime.
+
+--------------------------------------------------------------------------------------------------------
+ *  What is Runtime Polymorphism?
+
+	Runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time. In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable
+
+-------------------------------------------------
+ * Can we declare an interface as final in java?
+	Interface in Java is similar to class but, it contains only abstract methods and fields which are final and static.
+
+Since all the methods are abstract you cannot instantiate it. To use it, you need to implement this interface using a class and provide body to all the abstract methods int it.
+
+Making an interface final.
+If you declare a class final cannot extend it. If you make a method final you cannot override it and, if you make a variable final you cannot modify it. i.e. use final with Java entities you cannot modify them further.
+
+If you make an interface final, you cannot implement its methods which defies the very purpose of the interfaces. Therefore, you cannot make an interface final in Java. Still if you try to do so, a compile time exception is generated saying “illegal combination of modifiers − interface and final”.
+
+---------------------------------------------
+ * Why a constructor cannot be final in Java?
+	Whenever you make a method final, you cannot override it. i.e. you cannot provide implementation to the superclass's final method from the subclass.
+
+i.e. The purpose of making a method final is to prevent modification of a method from outside (child class).
+
+In inheritance whenever you extend a class. The child class inherits all the members of the superclass except the constructors.
+
+In other words, constructors cannot be inherited in Java therefore you cannot override constructors.
+
+So, writing final before constructors makes no sense. Therefore, java does not allow final keyword before a constructor.
+
+If you try, make a constructor final a compile time error will be generated saying “modifier final not allowed here”.
+
+----------------------------------------------
+ * Can a constructor be overridden in    java?
+	Constructor looks like method  but it is not. It does not have a  return type and its name is same as the  class name.
+
+	But, a constructor cannot be  overridden. If you try to write a super  class’s constructor in the sub class  compiler treats it as a method and  expects a return type and generates a  compile time error.
+
+--------------------------------------------------------
+ 1) Why an interface doesn't have a constructor whereas an abstract class have a constructor in Java?
+
+
+ A Constructor is to initialize the non-static members of a particular class 
+ with respect to an object.
+
+ Constructor in an interface
+ An Interface in Java doesn't have a constructor because all data members in interfaces are 
+ public static final by default, they are constants (assign the values at the time of declaration).
+ There are no data members in an interface to initialize them through the constructor.
+ In order to call a method, we need an object, since the methods in the interface don’t have a 
+ body there is no need for calling the methods in an interface.
+ Since we cannot call the methods in the interface, there is no need of creating an object for an interface 
+ and there is no need of having a constructor in it.
+
+---------------------------------------------------------------------------------------------------
+ 2) Why abstract classes have a constructor? 
+
+The main purpose of the constructor is to initialize the newly created object. In abstract class, we have an instance variable, abstract methods, and non-abstract methods. We need to initialize the non-abstract methods and instance variables, therefore abstract classes have a constructor.
+Also, even if we don’t provide any constructor the compiler will add default constructor in an abstract class.
+An abstract class can be inherited by any number of sub-classes, thus functionality of constructor present in abstract class can be used by them.
+The constructor inside the abstract class can only be called during constructor chaining i.e. when we create an instance of sub-classes. This is also one of the reasons abstract class can have a constructor.
+-----------------------------------------------------------------------------------------------------------
+
+ 3) Why Constructors are not inherited in Java?
+
+Constructor is a block of code that allows you to create an object of class and has same name as class with no explicit return type.
+
+Whenever a class (child class) extends another class (parent class), the sub class inherits state and behavior in the form of variables and methods from its super class but it does not inherit constructor of super class because of following reasons:
+
+Constructors are special and have same name as class name. So if constructors were inherited in child class then child class would contain a parent class constructor which is against the constraint that constructor should have same name as class name. For example see the below code:
+
+class Parent {
+    public Parent()
+    {
+    }
+  
+    public void print()
+    {
+    }
+}
+  
+public class Child extends Parent {
+    public Parent()
+    {
+    }
+    public void print()
+    {
+    }
+  
+    public static void main(String[] args)
+    {
+        Child c1 = new Child(); // allowed
+        Child c2 = new Parent(); // not allowed
+    }
+}
+If we define Parent class constructor inside Child class it will give compile time error for return type and consider it a method. But for print method it does not give any compile time error and consider it a overriding method.
+
+Now suppose if constructors can be inherited then it will be impossible to achieving encapsulation. Because by using a super class’s constructor we can access/initialize private members of a class.
+A constructor cannot be called as a method. It is called when object of the class is created so it does not make sense of creating child class object using parent class constructor notation. i.e. Child c = new Parent();
+A parent class constructor is not inherited in child class and this is why super() is added automatically in child class constructor if there is no explicit call to super or this.
+---------------------------------------------------------------------------------------------------------------
+
+ 4) Can we override a static method?
+
+No, we cannot override static methods because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods.
+
+The calling of method depends upon the type of object that calls the static method. It means:
+
+If we call a static method by using the parent class object, the original static method will be called from the parent class.
+If we call a static method by using the child class object, the static method of the child class will be called.
+
+  					OR
+ 4) Can we Override static methods in java? 
+
+We can declare static methods with the same signature in the subclass, but it is not considered overriding as there won’t be any run-time polymorphism. Hence the answer is ‘No’. 
+If a derived class defines a static method with the same signature as a static method in the base class, the method in the derived class is hidden by the method in the base class. 
+--------------------------------------------------------------------------------------------------------------
+
+superclass or the Overridden method present in the subclass. Due to late binding, this decision is taken at run-time and not at compile-time.
+
+ 5) Can We Override a Final Method?
+
+No, the Methods that are declared as final cannot be Overridden or hidden. For this very reason, a method must be declared as final only when we’re sure that it is complete.
+
+It is noteworthy that abstract methods cannot be declared as final because they aren’t complete and Overriding them is necessary.
+Methods are declared final in java to prevent subclasses from Overriding them and changing their behavior, the reason this works is discussed at the end of this article.
+The advantage of the final keyword is that it stops developers from intentionally or unintentionally changing the behavior of methods that should not be changed for security or other reasons.
+Result of Overriding a Final Method
+
+In the code below:
+
+The class IntegralOperations has two methods, add and subtract that perform the expected operation.
+Both add and subtract are declared final.
+The class child extends IntegralOperations and tries to Override add and subtract.
+
+---------------------------------------------------------------------------------------------------------------
+
+ 6) Why Does The final Keyword Prevent Overriding?
+
+In the beginning, it was discussed that methods to be Overridden follow Dynamic Method Dispatch (late binding)But the methods which are declared as final follow static binding (early binding), which means that the method definition will be grouped with a body at compile-time itself.
+
+In other words, JVM must know exactly which method to call at compile-time.To accomplish this, for every final method definition there must be a unique body. But if Overriding is allowed then there can be multiple bodies for a method definition and then the compiler won’t be able to choose one of them.
+
+This issue is seen in the above example where we have two bodies each for add and subtract methods. This prompts the compiler to throw an error at compile-time. In this way, the final keyword prevents Overriding and guards the semantics of a method.
+
+Since binding is performed at compile-time, it is also known as early binding. Compile-time polymorphism can be achieved/implemented by method overloading in java.
+
+Method overloading is a mechanism in which a class has multiple methods having the same name but different signatures. It is one of the ways that Java implements polymorphism.
+
+Another example of static polymorphism is constructor overloading and method hiding.
+
+Java Compile-time Polymorphism Example Program
+Let’s take an example program where we will implement static polymorphism. In this example program, we will create a class StaticPoly.
+
+In this class, we will create two methods having the same name sum. Both of these methods will have different signatures. Let’s start coding.
+------------------------------------------------------------------------------------------------------
+
+Dynamic Polymorphism in Java
+A polymorphism that is exhibited at runtime is called dynamic polymorphism in java. In dynamic polymorphism, the behavior of a method is decided at runtime,
+
+therefore, the JVM (Java Virtual Machine) binds the method call with method definition/body at runtime and invokes the relevant method during runtime when the method is called.
+
+This happens because objects are created at runtime and the method is called using an object of the class. The Java compiler has no awareness of the method to be called on an instance during compilation. Therefore, JVM invokes the relevant method during runtime.
+
+Dynamic or runtime polymorphism can be achieved/implemented in java using method overriding. Method overriding is a mechanism where a method of Base class is overridden in the derived class to provide a more specific implementation.
+
+The signature of method in both base and derived classes is the same but they only differ in their implementation.
+
+Let’s take an example program where we will implement dynamic polymorphism by method overriding.
+

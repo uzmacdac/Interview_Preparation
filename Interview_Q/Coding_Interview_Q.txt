@@ -1,0 +1,3167 @@
+Interview Question :
+https://drive.google.com/drive/folders/19lh18GgUI1mac4LlhRWu9Iw_8aC0MLjN
+
+------------------------------------------------------
+
+Seclore Technology Company :
+---------------------------
+1) Count word and count the delimeter preent in the string 
+Input :This.string.has,word,letter...seperated.by.delimeter.
+Output :18 
+     
+2) Reverse the string without reversing special character like @ & $ 
+input : This34#is@&special
+Output : laicep#ss@&i43siht
+
+--------------------------------------------------------------------
+
+1) Common element range problem 
+   ex : Input : {1,5},{6 , 10} ,{2 , 3},{7, 5}
+	Output : 2
+   explanation : {1,5} and {2,3} have common element so they are in group 		1 and {6 , 10},{7 , 10}  have common element so they are 
+		in group2 . There will be  2  group form for common range 
+	
+
+2) Ip Address Validation 
+
+3) Maximum value frequency 
+   Input : [5 , 4 , 2 , 5 , 1]
+   Output :[2 , 1 , 1 , 1]	
+   Explanation : 5 is max in array and has occur 2 time ,then next maximum element is 4  which occur 1 time  ,then 2 also  1 time ,then  1  also occur 1 time , so the output is [2 , 1 , 1 , 1]
+
+4) First Unique character in string 
+   Input : "statistics"
+   Output : 3      
+   Explanation : only a, c are occur one time i.e they are unique but 
+                but ouput is 3 because 'a' is first unique character 		which is present at index 3  so output is 3 (index 
+		start from 1 )
+   Input : "hackthegame"
+   Output : 3
+   Input : "anagram
+   Output : 2  --> because n is the first unique character of string    which is at index 2 (index start from 1) 	 	
+---------------------------------------------------------------------------------------------------------
+*) Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list. Either head pointer may be null meaning that the corresponding list is empty.
+
+Example
+headA refers to 1 -> 3 -> 7 -> NULL
+headB refers to 1 -> 2 -> NULL
+
+The new list is 1 -> 1 -> 2 -> 3 -> 7 -> NULL.
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+
+Node MergeLists(Node list1, Node list2) {
+     // This is a "method-only" submission. 
+     // You only need to complete this method 
+    
+    Node dummy = new Node();
+    dummy.next=null;
+    dummy.data=0;
+    
+    Node temp= dummy;
+    
+    while(true)
+        {
+        
+        if(list1==null)
+        {    temp.next = list2;
+            break;
+        }
+        else if(list2==null){
+            temp.next = list1;
+            break;
+        }
+        else if(list1.data < list2.data)
+            {
+              
+              temp.next=list1;
+              list1=list1.next;
+            
+        }
+        
+        else{
+            temp.next=list2;
+            list2=list2.next;
+            
+        }
+        temp=temp.next;
+    }
+    return dummy.next;
+    
+
+}
+
+------------------------------------------------------------------------
+
+Common Coding Questions
+1) Write a C++ Program to reverse a string without using String inbuilt function.
+
+2) Write a Java Program to swap two numbers without using the third variable
+class Geeks {
+ 
+    public static void main(String a[])
+    {
+        int x = 10;
+        int y = 5;
+        x = x + y;
+        y = x - y;
+        x = x - y;
+        System.out.println("After swapping:"
+                           + " x = " + x + ", y = " + y);
+    }
+-------------------------------------------------------------------
+
+// Java Program to swap two numbers without using temporary
+// variable
+import java.io.*;
+ 
+class GFG {
+    public static void main(String[] args)
+    {
+        int x = 10;
+        int y = 5;
+ 
+        // Code to swap 'x' and 'y'
+        x = x * y; // x now becomes 50
+        y = x / y; // y becomes 10
+        x = x / y; // x becomes 5
+ 
+        System.out.println("After swaping:"
+                           + " x = " + x + ", y = " + y);
+    }
+}
+------------------------------------------------------------------------
+
+public class GFG {
+ 
+    public static void main(String a[])
+    {
+        int x = 10;
+        int y = 5;
+ 
+        // Code to swap 'x' (1010) and 'y' (0101)
+        x = x ^ y; // x now becomes 15 (1111)
+        y = x ^ y; // y becomes 10 (1010)
+        x = x ^ y; // x becomes 5 (0101)
+ 
+        System.out.println("After swap: x = "
+                           + x + ", y = " + y);
+    }
+}
+------------------------------------------------------
+class GFG {
+    public static void main(String[] args)
+    {
+        int x = 10;
+        int y = 5;
+        x = (x * y) / (y = x);
+        System.out.println("After swaping:"
+                           + " x = " + x + ", y = " + y);
+    }
+}
+--------------------------------------------------
+class GFG {
+    public static void swap(int a, int b)
+    {
+        // same as a = a + b
+        a = (a & b) + (a | b);
+        // same as b = a - b
+        b = a + (~b) + 1;
+        // same as a = a - b
+        a = a + (~b) + 1;
+        System.out.print("After swapping: a = " + a + ", b = " + b);
+    }
+    public static void main(String[] args)
+    {
+        int a = 5, b = 10;
+        // Function Call
+        swap(a, b);
+    }
+}
+---------------------------------------------------------------------------------
+3) Write a Java Program to count the number of words in a string using HashMap
+-> 
+public static void main(String[] args)
+    {
+ 
+        String str = "Alice is girl and Bob is boy";
+ 
+        Map<String, Integer> hashMap = new HashMap<>();
+ 
+        String[] words = str.split(" ");
+ 
+        for (String word : words) {
+            // containsKey(key) will return a boolean value
+            // i.e. true if it contains the key and false if
+            // it doesn't.
+            if (hashMap.containsKey(word))
+                hashMap.put(word, hashMap.get(word) + 1);
+ 
+            else
+                hashMap.put(word, 1);
+        }
+ 
+        System.out.println(hashMap);
+    }
+-> ----------------------------------------------------------------------
+ public static void main(String[] args)
+    {
+ 
+        // Declaring the String
+        String str = "Alice is girl and Bob is boy";
+        // Declaring a HashMap of <String, Integer>
+        Map<String, Integer> hashMap = new HashMap<>();
+ 
+        // Splitting the words of string
+        // and storing them in the array.
+        String[] words = str.split(" ");
+ 
+        for (String word : words) {
+ 
+            // Asking whether the HashMap contains the
+            // key or not. Will return null if not.
+            Integer integer = hashMap.get(word);
+ 
+            if (integer == null)
+                // Storing the word as key and its
+                // occurrence as value in the HashMap.
+                hashMap.put(word, 1);
+ 
+            else {
+                // Incrementing the value if the word
+                // is already present in the HashMap.
+                hashMap.put(word, integer + 1);
+            }
+        }
+        System.out.println(hashMap);
+    }
+----------------------------------------------------------------------
+4) Write a Java Program to iterate HashMap using While and advance for loop
+-> 
+ public static void main(String[] args)
+    {
+        // Creating a HashMap
+        Map<String, String> foodTable
+            = new HashMap<String, String>();
+ 
+        // Inserting elements to the adobe HashMap
+        // Elements- Key value pairs using put() method
+        foodTable.put("A", "Angular");
+        foodTable.put("J", "Java");
+        foodTable.put("P", "Python");
+        foodTable.put("H", "Hibernate");
+ 
+        // Iterating HashMap through for loop
+        for (Map.Entry<String, String> set :
+             foodTable.entrySet()) {
+ 
+            // Printing all elements of a Map
+            System.out.println(set.getKey() + " = "
+                               + set.getValue());
+        }
+    }
+--------------------------------------------------------
+public static void main(String args[])  
+{  
+  HashMap<Integer, String> hm = new HashMap<Integer, String>();  //implements map interface  
+  hm.put(110,"Ravi");  
+  hm.put(120,"Prateek");  
+  hm.put(130, "Davesh");    
+  hm.put(140, "Kamal");  
+  hm.put(150, "Pawan");  
+  Iterator <Integer> it = hm.keySet().iterator();       //keyset is a method  
+  while(it.hasNext())  
+  {  
+    int key=(int)it.next();  
+    System.out.println("Roll no.: "+key+"     name: "+hm.get(key));  
+  }  
+}  
+------------------------------------------------------------------------
+5) Write a Java Program to find whether a number is prime or not
+->
+class GFG {
+  
+    static boolean isPrime(int n)
+    {
+        // Corner cases
+        if (n <= 1)
+            return false;
+        if (n <= 3)
+            return true;
+  
+        // This is checked so that we can skip
+        // middle five numbers in below loop
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+  
+        for (int i = 5; i * i <= n; i = i + 6)
+            if (n % i == 0 || n % (i + 2) == 0)
+                return false;
+  
+        return true;
+    }
+  
+    // Driver Program
+    public static void main(String args[])
+    {
+        if (isPrime(11))
+            System.out.println(" true");
+        else
+            System.out.println(" false");
+        if (isPrime(15))
+            System.out.println(" true");
+        else
+            System.out.println(" false");
+    }
+}
+Output:
+true
+ false
+-------------------------------------------
+Time complexity of this solution is O(√n)
+--------------------------------------------------------------------------
+// to check if a number is prime
+class GFG {
+  
+    static boolean isPrime(int n)
+    {
+        // Corner case
+        if (n <= 1)
+            return false;
+  
+        // Check from 2 to n-1
+        for (int i = 2; i < n; i++)
+            if (n % i == 0)
+                return false;
+  
+        return true;
+    }
+  
+    // Driver Program
+    public static void main(String args[])
+    {
+        if (isPrime(11))
+            System.out.println(" true");
+        else
+            System.out.println(" false");
+        if (isPrime(15))
+            System.out.println(" true");
+        else
+            System.out.println(" false");
+    }
+}
+Output:
+       true
+       false
+Time complexity of this solution is O(n)
+--------------------------------------------------------------------------
+6) Write a Java Program to find whether a string or number is palindrome or not
+->
+public class GFG {
+
+    static boolean isPalindrome(String str)
+    {
+         // Pointers pointing to the beginning
+        // and the end of the string
+
+        int i = 0, j = str.length() - 1;
+ 
+        // While there are characters to compare
+        while (i < j) {
+ 
+            // If there is a mismatch
+            if (str.charAt(i) != str.charAt(j))
+                return false;
+ 
+            // Increment first pointer and
+            // decrement the other
+            i++;
+            j--;
+        }
+ 
+        // Given string is a palindrome
+        return true;
+    }
+
+    public static void main(String[] args)
+    {
+        // Input string
+        String str = "geeks";
+ 
+        //Convert the string to lowercase
+        str = str.toLowerCase();
+        // passing bool function till holding true
+        if (isPalindrome(str))
+ 
+            // It is a palindrome
+            System.out.print("Yes");
+        else
+ 
+            // Not a palindrome
+            System.out.print("No");
+    }
+}
+-----------------------------------------------------
+--------------------------------------------------------------------------.
+7) Write a Java Program for Fibonacci series.
+
+1)
+static void Fibonacci(int N)
+    {
+        int num1 = 0, num2 = 1;
+  
+        int counter = 0;
+  
+        // Iterate till counter is N
+        while (counter < N) {
+  
+            // Print the number
+            System.out.print(num1 + " ");
+  
+            // Swap
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            counter = counter + 1;
+        }
+    }
+  
+    // Driver Code
+    public static void main(String args[])
+    {
+        // Given Number N
+        int N = 10;
+  
+        // Function Call
+        Fibonacci(N);
+    }
+Time complexity : o(n)
+----------------------------------------------------
+2)class GFG {
+  
+    // Function to print the fibonacci series
+    static int fib(int n)
+    {
+        // Base Case
+        if (n <= 1)
+            return n;
+  
+        // Recursive call
+        return fib(n - 1)
+            + fib(n - 2);
+    }
+  
+    // Driver Code
+    public static void
+    main(String args[])
+    {
+        // Given Number N
+        int N = 10;
+  
+        // Print the first N numbers
+        for (int i = 0; i < N; i++) {
+  
+            System.out.print(fib(i) + " ");
+        }
+    }
+}
+ Time Complexity: O(2N)  
+ Auxiliary Space: O(1)
+-
+--------------------------------------------------------------------------
+8) Write a Java Program to iterate ArrayList using for-loop, while-loop, and advance for-loop.
+
+--------------------------------------------------------------------------
+9) Write a Java Program to demonstrate explicit wait condition check.
+
+--------------------------------------------------------------------------
+10) Write a Java Program to open all links of gmail.com.
+
+--------------------------------------------------------------------------
+11) Write a Java Program to find the duplicate characters in a string.
+->
+class GFG {
+ 
+    // Function to print all duplicate
+    // characters in string using HashMap
+    public static void
+    countDuplicateCharacters(String str)
+    {
+ 
+        // Creating a HashMap containing char
+        // as a key and occurrences as a value
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+ 
+        // Converting given string into
+        // a char array
+        char[] charArray = str.toCharArray();
+ 
+        // Checking each character
+        // of charArray
+        for (char c : charArray) {
+ 
+            if (map.containsKey(c)) {
+ 
+                // If character is present
+                // in map incrementing it's
+                // count by 1
+                map.put(c, map.get(c) + 1);
+            }
+            else {
+ 
+                // If character is not present
+                // in map putting this
+                // character into map with
+                // 1 as it's value.
+                map.put(c, 1);
+            }
+        }
+        // Traverse the HashMap, check
+        // if the count of the character
+        // is greater than 1 then print
+        // the character and its frequency
+
+        for (Map.Entry<Character, Integer> entry :map.entrySet()) 
+	{
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey()+ " : "+ entry.getValue());
+                                   
+            }
+        }
+    }
+ 
+    // Driver Code
+    public static void main(String args[])
+    {
+        // Given String str
+        String str = "geeksforgeeks";
+ 
+        // Function Call
+        countDuplicateCharacters(str);
+    }
+}
+
+--------------------------------------------------------------------------
+12) Write a Java Program to find the second highest number in an array.
+->
+class GFG{
+ 
+// Function to print the
+// second largest elements
+static void print2largest(int arr[],int arr_size)                         
+{
+  int i, first, second;
+ 
+  // There should be
+  // atleast two elements
+  if (arr_size < 2)
+  {
+    System.out.printf(" Invalid Input ");
+    return;
+  }
+ 
+  // Sort the array
+  Arrays.sort(arr);
+ 
+  // Start from second last element
+  // as the largest element is at last
+  for (i = arr_size - 2; i >= 0; i--)
+  {
+    // If the element is not
+    // equal to largest element
+    if (arr[i] != arr[arr_size - 1])
+    {
+      System.out.printf("The second largest " +"element is %d\n", arr[i]);
+                        
+      return;
+    }
+  }
+ 
+  System.out.printf("There is no second " +"largest element\n");
+                    
+}
+ 
+// Driver code
+public static void main(String[] args)
+{
+  int arr[] = {12, 35, 1, 10, 34, 1};
+  int n = arr.length;
+  print2largest(arr, n);
+}
+}
+
+--------------------------------------------------------------------------
+13) Write a Java Program to check Armstrong number.
+1)
+public class ArmstrongNumber {
+    public static void main(String[] args)
+    {
+ 
+        int n = 153;
+        int temp = n;
+        int p = 0;
+ 
+        /*function to calculate
+          the sum of individual digits
+         */
+        while (n > 0) {
+ 
+            int rem = n % 10;
+            p = (p) + (rem * rem * rem);
+            n = n / 10;
+        }
+ 
+        /* condition to check whether
+           the value of P equals
+           to user input or not. */
+        if (temp == p) {
+            System.out.println("Yes. It is Armstrong No.");
+        }
+        else {
+            System.out.println(
+                "No. It is not an Armstrong No.");
+        }
+    }
+}
+---------------------------------------------------------------
+2) public class Armstrong {
+    /* Function to calculate x raised to the
+       power y */
+    int power(int x, long y)
+    {
+        if (y == 0)
+            return 1;
+        if (y % 2 == 0)
+            return power(x, y / 2) * power(x, y / 2);
+        return x * power(x, y / 2) * power(x, y / 2);
+    }
+ 
+    /* Function to calculate order of the number */
+    int order(int x)
+    {
+        int n = 0;
+        while (x != 0) {
+            n++;
+            x = x / 10;
+        }
+        return n;
+    }
+ 
+    // Function to check whether the given number is
+    // Armstrong number or not
+    boolean isArmstrong(int x)
+    {
+        // Calling order function
+        int n = order(x);
+        int temp = x, sum = 0;
+        while (temp != 0) {
+            int r = temp % 10;
+            sum = sum + power(r, n);
+            temp = temp / 10;
+        }
+ 
+        // If satisfies Armstrong condition
+        return (sum == x);
+    }
+ 
+    // Driver Program
+    public static void main(String[] args)
+    {
+        Armstrong ob = new Armstrong();
+        int x = 153;
+        System.out.println(ob.isArmstrong(x));
+        x = 1253;
+        System.out.println(ob.isArmstrong(x));
+    }
+}
+------------------------------------------------------------------
+3)class GFG {
+ 
+    // Function to find Nth Armstrong Number
+    static int NthArmstrong(int n)
+    {
+        int count = 0;
+ 
+        // upper limit from integer
+        for (int i = 1; i <= Integer.MAX_VALUE; i++) {
+            int num = i, rem, digit = 0, sum = 0;
+ 
+            // Copy the value for num in num
+            num = i;
+ 
+            // Find total digits in num
+            digit = (int)Math.log10(num) + 1;
+ 
+            // Calculate sum of power of digits
+            while (num > 0) {
+                rem = num % 10;
+                sum = sum + (int)Math.pow(rem, digit);
+                num = num / 10;
+            }
+ 
+            // Check for Armstrong number
+            if (i == sum)
+                count++;
+            if (count == n)
+                return i;
+        }
+        return n;
+    }
+ 
+    // Driver Code
+    public static void main(String[] args)
+    {
+        int n = 12;
+        System.out.println(NthArmstrong(n));
+    }
+}
+--------------------------------------------------------------------------
+14) Write a Java Program to remove all white spaces from a string with using replace().
+->
+class BlankSpace {
+    public static void main(String[] args)
+    {
+        String str = "     Geeks     for Geeks     ";
+ 
+        // Call the replaceAll() method
+        str = str.replaceAll("\\s", "");
+ 
+        System.out.println(str);
+    }
+}
+--------------------------------------------------------------------------
+15) Write a Java Program to read an excel.
+->
+public class ReadExcelFileDemo  
+{  
+public static void main(String args[]) throws IOException  
+{  
+     //obtaining input bytes from a file  
+   FileInputStream fis=new FileInputStream(new File("C:\\demo\\student.xls")); 
+ 
+	//creating workbook instance that refers to .xls file  
+   HSSFWorkbook wb=new HSSFWorkbook(fis);   
+
+	//creating a Sheet object to retrieve the object  
+   HSSFSheet sheet=wb.getSheetAt(0);
+  
+	//evaluating cell type   
+   FormulaEvaluator formulaEvaluator=wb.getCreationHelper().createFormulaEvaluator();  
+
+   for(Row row: sheet)     //iteration over row using for each loop  
+   {  
+       for(Cell cell: row)    //iteration over cell using for each loop  
+       {  
+         switch(formulaEvaluator.evaluateInCell(cell).getCellType())  
+         {  
+            case Cell.CELL_TYPE_NUMERIC:   //field that represents numeric cell type  
+                     //getting the value of the cell as a number  
+                System.out.print(cell.getNumericCellValue()+ "\t\t");   
+                break;  
+           case Cell.CELL_TYPE_STRING:    //field that represents string cell type  
+                   //getting the value of the cell as a string  
+           System.out.print(cell.getStringCellValue()+ "\t\t");  
+            break;  
+      }  
+    }  
+     System.out.println();  
+  }  
+}  
+}  
+
+--------------------------------------------------------------------------
+16)  How to find duplicate characters in a string in java?
+->class GFG {
+ 
+    // Function to print all duplicate
+    // characters in string using HashMap
+    public static void
+    countDuplicateCharacters(String str)
+    {
+ 
+        // Creating a HashMap containing char
+        // as a key and occurrences as a value
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+             
+        // Converting given string into
+        // a char array
+        char[] charArray = str.toCharArray();
+ 
+        // Checking each character
+        // of charArray
+        for (char c : charArray) {
+ 
+            if (map.containsKey(c)) {
+ 
+                // If character is present
+                // in map incrementing it's
+                // count by 1
+                map.put(c, map.get(c) + 1);
+            }
+            else {
+ 
+                // If character is not present
+                // in map putting this
+                // character into map with
+                // 1 as it's value.
+                map.put(c, 1);
+            }
+        }
+ 
+        // Traverse the HashMap, check
+        // if the count of the character
+        // is greater than 1 then print
+        // the character and its frequency
+        for (Map.Entry<Character, Integer> entry :map.entrySet()) {
+              
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey()+ " : "+ entry.getValue());
+                                                                      
+            }
+        }
+    }
+ 
+    // Driver Code
+    public static void main(String args[])    
+    {
+        // Given String str
+        String str = "geeksforgeeks";
+ 
+        // Function Call
+        countDuplicateCharacters(str);
+    }
+}
+Output:
+s : 2
+e : 4
+g : 2
+k : 2
+Time Complexity: O(NlogN) 
+
+Auxiliary Space: O(N) since using Map
+
+--------------------------------------------------------------------------
+17) How do you check the equality of two arrays in java?
+->
+public class CheckArraysEqual {
+    public static void main(String[] args)
+    {
+        // Initializing the first array
+        int a[] = { 30, 25, 40 };
+  
+        // Initializing the second array
+        int b[] = { 30, 25, 40 };
+  
+        // store the result
+        // Arrays.equals(a, b) function is used to check
+        // whether two arrays are equal or not
+        boolean result = Arrays.equals(a, b);
+  
+        // condition to check whether the
+        // result is true or false
+        if (result == true) {
+            // Print the result
+            System.out.println("Two arrays are equal");
+        }
+        else {
+            // Print the result
+            System.out.println("Two arrays are not equal");
+        }
+    }
+}
+---------------------------------------------------------------
+
+public class checkArraysEqual {
+    public static void main(String[] args)
+    {
+        // Initializing the first array
+        int a[] = { 10, 30, 12 };
+        // Initializing the second array
+        int b[] = { 10, 30, 12 };
+  
+        // store the result
+        boolean result = true;
+  
+        // Check if length of the two arrays are equal or
+        // not
+        if (a.length == b.length) {
+            
+            // Loop to check elements of arrays one by one
+            for (int i = 0; i < a.length; i = i + 1) {
+                
+                // To check if any element is different
+                if (a[i] != b[i]) {
+                    
+                    // If any element is different then it
+                    // will assign false into boolean
+                    // variable
+                    result = false;
+                }
+            }
+        }
+        else {
+            
+            // If the length of two arrays is
+            // different then it will assign
+            // false into boolean variable
+            result = false;
+        }
+        
+        // After completion to check whether
+        // result is true of false
+        if (result == true) {
+            
+            // Print the result
+            System.out.println("Arrays are equal");
+        }
+        else {
+            
+            // Print the result
+            System.out.println("Arrays are not equal");
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+*)  5. How to check if a String contains only digits
+
+// Java program to check if a string
+// contains only digits
+class GFG {
+ 
+    // Function to check if a string
+    // contains only digits
+    public static boolean onlyDigits(String str, int n)
+    {
+ 
+        // Traverse the string from
+        // start to end
+        for (int i = 0; i < n; i++) {
+ 
+            // Check if the sepecified
+            // character is a not digit
+            // then return false,
+            // else return false
+            if (!Character.isDigit(str.charAt(i))) {
+                return false;
+            }
+        }
+          // If we reach here that means all
+          // the characters were digits,
+          // so we return true
+        return true;
+    }
+ 
+    // Driver Code
+    public static void main(String args[])
+    {
+        // Given string str
+        String str = "1234";
+        int len = str.length();
+ 
+        // Function Call
+        System.out.println(onlyDigits(str, len));
+    }
+}
+Output
+true
+Time Complexity: O(N), where N is the length of the given string. 
+Auxiliary Space: O(1)
+--------------------------------------------------------------------------
+18) How to find duplicate elements in an array?
+class Leet442 {
+  
+    public static void main(String args[])
+    {
+        int numRay[] = { 0, 4, 3, 2, 7, 8, 2, 3, 1 };
+  
+        for (int i = 0; i < numRay.length; i++) {
+
+            numRay[numRay[i] % numRay.length] = numRay[numRay[i] % numRay.length]+ numRay.length;                 
+        }
+        System.out.println("The repeating elements are : ");
+        for (int i = 0; i < numRay.length; i++) 
+	{
+            if (numRay[i] >= numRay.length * 2) {
+                System.out.println(i + " ");
+            }
+        }
+    }
+}
+Output
+The repeating elements are : 
+2 
+3 
+
+--------------------------------------------------------------------------
+19) How to find sum of all digits of a number in java?
+
+class GFG {
+     
+    /* Function to get sum of digits */
+    static int getSum(int n)
+    {   
+        int sum = 0;
+         
+        while (n != 0)
+        {
+            sum = sum + n % 10;
+            n = n/10;
+        }
+     
+    return sum;
+    }
+ 
+    // Driver program
+    public static void main(String[] args)
+    {
+        int n = 687;
+ 
+        System.out.println(getSum(n));
+    }
+}
+ 
+// This code is contributed by Gitanjali
+Time Complexity: O(|n|)
+
+Auxiliary Space: O(1)
+
+How to compute in single line? 
+-------------------------------------------------------
+// Java program to compute
+// sum of digits in number.
+import java.io.*;
+ 
+class GFG {
+     
+    /* Function to get sum of digits */
+    static int getSum(int n)
+    {
+        int sum;
+ 
+        /* Single line that calculates sum */
+        for (sum = 0; n > 0; sum += n % 10,
+                                  n /= 10);
+ 
+        return sum;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        int n = 687;
+ 
+        System.out.println(getSum(n));
+    }
+}
+ 
+// This code is contributed by Gitanjali
+Time Complexity: O(|n|)
+
+Auxiliary Space: O(1)
+--------------------------------------------------------------
+class GFG {
+   
+    /* Function to get sum of digits */
+    static int sumDigits(int no)
+    {
+        return no == 0 ? 0 : no%10 +
+                  sumDigits(no/10) ;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+    int n = 687;
+ 
+    System.out.println(sumDigits(n));
+    }
+}
+--------------------------------------------------------------------------
+20) How to find second largest number in an integer array?
+class GFG{
+ 
+// Function to print the second largest elements
+static void print2largest(int arr[], int arr_size)
+{
+    int i, first, second;
+ 
+    // There should be atleast two elements
+    if (arr_size < 2)
+    {
+        System.out.printf(" Invalid Input ");
+        return;
+    }
+ 
+    int largest = second = Integer.MIN_VALUE;
+ 
+    // Find the largest element
+    for(i = 0; i < arr_size; i++)
+    {
+        largest = Math.max(largest, arr[i]);
+    }
+ 
+    // Find the second largest element
+    for(i = 0; i < arr_size; i++)
+    {
+        if (arr[i] != largest)
+            second = Math.max(second, arr[i]);
+    }
+    if (second == Integer.MIN_VALUE)
+        System.out.printf("There is no second " +
+                          "largest element\n");
+    else
+        System.out.printf("The second largest " +
+                          "element is %d\n", second);
+}
+ 
+// Driver code
+public static void main(String[] args)
+{
+    int arr[] = { 12, 35, 1, 10, 34, 1 };
+    int n = arr.length;
+     
+    print2largest(arr, n);
+}
+}
+ 
+// This code is contributed by Amit Katiyar
+Output
+Second largest : 12
+Complexity Analysis:
+
+Time Complexity: O(n). 
+Two traversals of the array is needed.
+Auxiliary space: O(1). 
+------------------------------------------------------------
+class GFG {
+ 
+    /* Function to print the second largest
+    elements */
+    public static void print2largest(int arr[],
+                                     int arr_size)
+    {
+        int i, first, second;
+ 
+        /* There should be atleast two elements */
+        if (arr_size < 2) {
+            System.out.print(" Invalid Input ");
+            return;
+        }
+ 
+        first = second = Integer.MIN_VALUE;
+        for (i = 0; i < arr_size; i++) {
+            /* If current element is greater than
+            first then update both first and second */
+            if (arr[i] > first) {
+                second = first;
+                first = arr[i];
+            }
+ 
+            /* If arr[i] is in between first and
+               second then update second  */
+            else if (arr[i] > second && arr[i] != first)
+                second = arr[i];
+        }
+ 
+        if (second == Integer.MIN_VALUE)
+            System.out.print("There is no second largest"
+                             + " element\n");
+        else
+            System.out.print("The second largest element"
+                             + " is " + second);
+    }
+ 
+    /* Driver program to test above function */
+    public static void main(String[] args)
+    {
+        int arr[] = { 12, 35, 1, 10, 34, 1 };
+        int n = arr.length;
+        print2largest(arr, n);
+    }
+}
+// This code is contributed by Arnav Kr. Mandal.
+Output
+The second largest element is 34
+Complexity Analysis:
+
+Time Complexity: O(n). 
+Only one traversal of the array is needed.
+Auxiliary space: O(1). 
+As no extra space is required.
+--------------------------------------------------------------------------
+21) How to count occurrences of each character in a string in java?
+class OccurenceOfCharInString {
+    static void characterCount(String inputString)
+    {
+        // Creating a HashMap containing char
+        // as a key and occurrences as  a value
+        HashMap<Character, Integer> charCountMap
+            = new HashMap<Character, Integer>();
+ 
+        // Converting given string to char array
+ 
+        char[] strArray = inputString.toCharArray();
+ 
+        // checking each char of strArray
+        for (char c : strArray) {
+            if (charCountMap.containsKey(c)) {
+ 
+                // If char is present in charCountMap,
+                // incrementing it's count by 1
+                charCountMap.put(c, charCountMap.get(c) + 1);
+            }
+            else {
+ 
+                // If char is not present in charCountMap,
+                // putting this char to charCountMap with 1 as it's value
+                charCountMap.put(c, 1);
+            }
+        }
+ 
+        // Printing the charCountMap
+        for (Map.Entry entry : charCountMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+ 
+    // Driver Code
+    public static void main(String[] args)
+    {
+        String str = "Ajit";
+        characterCount(str);
+    }
+}
+
+--------------------------------------------------------------------------
+22) How to find largest number less than a given number and without a given digit?
+-> Efficicent method
+static void nondecdigits(String s)
+{
+    int m = s.length();
+ 
+    /* array to store digits of number */
+    int[] a = new int[m + 1];
+ 
+    /* conversion of characters of string int number */
+    for (int i = 0; i < m; i++)
+        a[i] = (int)s.charAt(i) - (int)'0';
+ 
+    /* variable holds the value of index after which
+    all digits are set 9 */
+    int level = m - 1;
+    for (int i = m - 1; i > 0; i--)
+    {
+        /* Checking the condition if the digit is
+        less than its left digit */
+        if (a[i] < a[i - 1])
+        {
+            a[i - 1]--;
+            level = i - 1;
+        }
+    }
+ 
+    /* If first digit is 0 no need to print it */
+    if (a[0] != 0)
+    {
+        for (int i = 0; i <= level; i++)
+            System.out.print(a[i]);
+        for (int i = level + 1; i < m; i++)
+            System.out.print("9");
+    }
+    else
+    {
+        for (int i = 1; i < level; i++)
+            System.out.print(a[i]);
+        for (int i = level + 1; i < m; i++)
+            System.out.print("9");
+    }
+}
+ 
+// Driver code
+public static void main(String[] args)
+{
+    String n = "200";
+    nondecdigits(n);
+}
+}
+
+
+
+--------------------------------------------------------
+class GFG
+{
+     
+// Returns the required number
+static int nondecdigits(int n)
+{
+    // loop to recursively check
+    // the numbers less than or
+    // equal to given number
+    int x = 0;
+    for (x = n; x >= 1; x--)
+    {
+        int no = x;
+        int prev_dig = 11;
+ 
+        // Keep traversing digits
+        // from right to left. For
+        // every digit check if it
+        // is smaller than prev_dig
+        boolean flag = true;
+        while (no != 0)
+        {
+            if (prev_dig < no % 10)
+            {
+                flag = false;
+                break;
+            }
+            prev_dig = no % 10;
+            no /= 10;
+        }
+ 
+        // We found the
+        // required number
+        if (flag == true)
+        break;
+    }
+ 
+    return x;
+}
+ 
+// Driver Code
+public static void main (String[] args)
+{
+    int n = 200;
+    System.out.println (nondecdigits(n));
+}
+}
+ 
+// This code is contributed by ajit
+Output: 
+
+199
+--------------------------------------------------------------------------
+23) How to remove duplicate elements from ArrayList in java?
+public class GFG {
+  
+    // Function to remove duplicates from an ArrayList
+    public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list)
+    {
+  
+        // Create a new ArrayList
+        ArrayList<T> newList = new ArrayList<T>();
+  
+        // Traverse through the first list
+        for (T element : list) {
+  
+            // If this element is not present in newList
+            // then add it
+            if (!newList.contains(element)) {
+  
+                newList.add(element);
+            }
+        }
+  
+        // return the new list
+        return newList;
+    }
+  
+    // Driver code
+    public static void main(String args[])
+    {
+  
+        // Get the ArrayList with duplicate values
+        ArrayList<Integer>
+            list = new ArrayList<>(
+                Arrays
+                    .asList(1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5));
+  
+        // Print the Arraylist
+        System.out.println("ArrayList with duplicates: "
+                           + list);
+  
+        // Remove duplicates
+        ArrayList<Integer>
+            newList = removeDuplicates(list);
+  
+        // Print the ArrayList with duplicates removed
+        System.out.println("ArrayList with duplicates removed: "
+                           + newList);
+    }
+}
+Output:
+ArrayList with duplicates: [1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5]
+ArrayList with duplicates removed: [1, 10, 2, 3, 4, 5]
+-----------------------------------------------------
+public class GFG {
+  
+    // Function to remove duplicates from an ArrayList
+    public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list)
+    {
+  
+        // Create a new LinkedHashSet
+        Set<T> set = new LinkedHashSet<>();
+  
+        // Add the elements to set
+        set.addAll(list);
+  
+        // Clear the list
+        list.clear();
+  
+        // add the elements of set
+        // with no duplicates to the list
+        list.addAll(set);
+  
+        // return the list
+        return list;
+    }
+  
+    // Driver code
+    public static void main(String args[])
+    {
+  
+        // Get the ArrayList with duplicate values
+        ArrayList<Integer>
+            list = new ArrayList<>(
+                Arrays
+                    .asList(1, 10, 1, 2, 2, 3, 10, 3, 3, 4, 5, 5));
+  
+        // Print the Arraylist
+        System.out.println("ArrayList with duplicates: "
+                           + list);
+  
+        // Remove duplicates
+        ArrayList<Integer>
+            newList = removeDuplicates(list);
+  
+        // Print the ArrayList with duplicates removed
+        System.out.println("ArrayList with duplicates removed: "
+                           + newList);
+    }
+}
+Output:
+ArrayList with duplicates: [1, 10, 1, 2, 2, 3, 10, 3, 3, 4, 5, 5]
+ArrayList with duplicates removed: [1, 10, 2, 3, 4, 5]
+-----------------------------------------------------------
+// Java program to remove duplicates from ArrayList
+  
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+  
+// Program to remove duplicates from a List in Java 8
+class GFG
+{
+    public static void main(String[] args)
+    {
+        // input list with duplicates
+        List<Integer> list = new ArrayList<>(
+            Arrays.asList(1, 10, 1, 2, 2, 3, 10, 3, 3, 4, 5, 5));
+            // Print the Arraylist
+        System.out.println("ArrayList with duplicates: "
+                           + list);
+  
+        // Construct a new list from the set constucted from elements
+        // of the original list
+        List<Integer> newList = list.stream()
+                                      .distinct()
+                                      .collect(Collectors.toList());
+  
+        // Print the ArrayList with duplicates removed
+        System.out.println("ArrayList with duplicates removed: "
+                           + newList);
+    }
+}
+--------------------------------------------------------------------------
+24) How to check whether given number is binary or not?
+class GFG {
+
+    // Function to check if number
+    // is binary or not
+    public static boolean isBinaryNumber(int num)
+    {
+
+        // Return false if a number
+        // is either 0 or 1 or a
+        // negative number
+        if (num == 0 || num == 1
+            || num < 0) {
+            return false;
+        }
+
+        // Get the rightmost digit of
+        // the number with the help
+        // of remainder '%' operator
+        // by dividing it with 10
+        while (num != 0) {
+
+            // If the digit is greater
+            // than 1 return false
+            if (num % 10 > 1) {
+                return false;
+            }
+            num = num / 10;
+        }
+        return true;
+    }
+
+    public static void main(String args[])
+    {
+        // Given Number N
+        int N = 1010;
+
+        // Function Call
+        System.out.println(isBinaryNumber(N));
+    }
+}
+
+--------------------------------------------------------------------------
+25) How to check whether user input is number or not in java?
+
+import java.io.*;
+ 
+public class GFG {
+ 
+    // Returns true if s is
+    // a number else false
+    static boolean isNumber(String s)
+    {
+        for (int i = 0; i < s.length(); i++)
+            if (Character.isDigit(s.charAt(i)) == false)
+                return false;
+ 
+        return true;
+    }
+ 
+    // Driver code
+    static public void main(String[] args)
+    {
+        // Saving the input in a string
+        String str = "6790";
+ 
+        // Function returns 1 if all elements
+        // are in range '0 - 9'
+        if (isNumber(str))
+            System.out.println("Integer");
+ 
+        // Function returns 0 if the
+        // input is not an integer
+        else
+            System.out.println("String");
+    }
+}
+ 
+// This code is contributed by vt_m.
+Output
+Integer
+--------------------------------------------------------------------------
+26) How to reverse each word of a string in java?
+class GFG {
+ 
+// reverses individual words of a string
+static void reverseWords(String str)
+{
+    Stack<Character> st=new Stack<Character>();
+  
+    // Traverse given string and push all
+    // characters to stack until we see a space.
+    for (int i = 0; i < str.length(); ++i) {
+        if (str.charAt(i) != ' ')
+            st.push(str.charAt(i));
+  
+        // When we see a space, we print
+        // contents of stack.
+        else {
+            while (st.empty() == false) {
+                System.out.print(st.pop());
+                 
+            }
+            System.out.print(" ");
+        }
+    }
+  
+    // Since there may not be space after
+    // last word.
+    while (st.empty() == false) {
+        System.out.print(st.pop());
+         
+    }
+}
+ 
+// Driver program to test above function
+public static void main(String[] args)
+{
+   String str = "Geeks for Geeks";
+    reverseWords(str);
+  }
+}
+Output
+skeeG rof skeeG
+---------------------------------------------------------------
+import java.util.Arrays;
+import java.util.stream.Collectors;
+ 
+// This code is contributed by Mayank Sharma
+public class reverseIndividual {
+ 
+    public static void main(String[] args) {
+ 
+        String str = "Welcome to GFG";
+         
+        // Splitting the string based on space and reverse each part
+        // and then join
+        String result = Arrays.asList(str.split(" "))
+                .stream()
+                .map(s -> new StringBuilder(s).reverse())
+                .collect(Collectors.joining(" "));
+ 
+        System.out.println(result);
+ 
+    }
+ 
+}
+--------------------------------------------------------------------------
+27) How to separate zeros from non-zeros in an array?
+import java.util.*;
+class GFG
+{
+ 
+  // function to shift zeros 
+  static void move_zeros_to_right(ArrayList<Integer> m)
+  {
+    int count = 0;
+    for (int i = 0; i < m.size(); i++) {
+      if (m.get(i) == 0) {
+        count++;
+ 
+        // deleting the element from vector
+        m.remove(i);
+        i--;
+      }
+    }
+ 
+    for (int i = 0; i < count; i++)
+    {
+ 
+      // inserting the zero into arraylist
+      m.add(0);
+    }
+    System.out.println("array after shifting zeros to right side: ");
+    for (int i = 0; i < m.size(); i++)
+    {
+ 
+      // printing desired arraylist
+      System.out.print(m.get(i) + " ");
+    }
+  }
+ 
+  // Driver Code
+  public static void main(String[] args)
+  {
+    ArrayList<Integer> m = new ArrayList<>(Arrays.asList(5, 6, 0, 4, 6, 0, 9, 0, 8));
+ 
+    // function call
+    move_zeros_to_right(m);
+  }
+}
+ 
+// This code is contributed by aditya942003patil
+Output
+array after shifting zeros to right side: 
+5 6 4 6 9 8 0 0 0 
+----------------------------------------------------------------
+class PushZero
+{
+    // Function which pushes all zeros to end of an array.
+    static void pushZerosToEnd(int arr[], int n)
+    {
+        int count = 0;  // Count of non-zero elements
+ 
+        // Traverse the array. If element encountered is
+        // non-zero, then replace the element at index 'count'
+        // with this element
+        for (int i = 0; i < n; i++)
+            if (arr[i] != 0)
+                arr[count++] = arr[i]; // here count is
+                                       // incremented
+ 
+        // Now all non-zero elements have been shifted to
+        // front and 'count' is set as index of first 0.
+        // Make all elements 0 from count to end.
+        while (count < n)
+            arr[count++] = 0;
+    }
+ 
+    /*Driver function to check for above functions*/
+    public static void main (String[] args)
+    {
+        int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
+        int n = arr.length;
+        pushZerosToEnd(arr, n);
+        System.out.println("Array after pushing zeros to the back: ");
+        for (int i=0; i<n; i++)
+            System.out.print(arr[i]+" ");
+    }
+}
+Array after pushing all zeros to end of array:
+1 9 8 4 2 7 6 9 0 0 0 0
+---------------------------------------------------------------------
+
+// Java Program to move all zeros to the end
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args)
+    {
+        int[] A = { 5, 6, 0, 4, 6, 0, 9, 0, 8 };
+        int n = A.length;
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (A[i] != 0) {
+                //   Swap - A[j] , A[i]
+                swap(A, j, i); // Partitioning the array
+                j++;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(A[i] + " "); // Print the array
+        }
+    }
+ 
+    // Utility function to swap two elements of an array
+    public static void swap(int[] A, int a, int b)
+    {
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+    }
+}
+
+--------------------------------------------------------------------------
+28) Reverse and add until you get a palindrome
+public class ReverseAdd {
+    /* Iterative function to reverse digits of num*/
+    long revers eDigits(long num)
+    {
+        long rev_num = 0;
+        while (num > 0) {
+            rev_num = rev_num * 10 + num % 10;
+            num = num / 10;
+        }
+        return rev_num;
+    }
+ 
+    /* Function to check whether he number is
+           palindrome or not */
+    boolean isPalindrome(long num)
+    {
+        return (reversDigits(num) == num);
+    }
+ 
+    /* Reverse and Add Function */
+    void ReverseandAdd(long num)
+    {
+        long rev_num = 0;
+        while (num <= 4294967295l) {
+            // Reversing the digits of the number
+            rev_num = reversDigits(num);
+ 
+            // Adding the reversed number
+            // with the original
+            num
+                = num + rev_num;
+ 
+            // Checking whether the number
+            // is palindrome or not
+            if (isPalindrome(num)) {
+                System.out.println(num);
+                break;
+            }
+            else if (num > 4294967295l) {
+                System.out.println("No palindrome exist");
+            }
+        }
+    }
+ 
+    // Main method
+    public static void main(String[] args)
+    {
+        ReverseAdd ob = new ReverseAdd();
+        ob.ReverseandAdd(195l);
+        ob.ReverseandAdd(265l);
+    }
+}
+Output:
+9339
+45254
+
+--------------------------------------------------------------------------
+29) Selection sort in java
+--------------------------------------------------------------------------
+30) String immutable program
+
+import java.io.*;
+ 
+class GFG {
+    public static void main(String[] args)
+    {
+        String s1 = "java";
+        s1.concat(" rules");
+ 
+        // Yes, s1 still refers to "java"
+        System.out.println("s1 refers to " + s1);
+    }
+}
+--------------------------------------------------------------------------
+31) How do you count occurrences of each element in an array?
+class GFG
+{
+ 
+    static void countFreq(int arr[], int n)
+    {
+        Map<Integer, Integer> mp = new HashMap<>();
+ 
+        // Traverse through array elements and
+        // count frequencies
+        for (int i = 0; i < n; i++)
+        {
+            mp.put(arr[i], mp.get(arr[i]) == null ? 1 : mp.get(arr[i]) + 1);
+        }
+ 
+        // To print elements according to first
+        // occurrence, traverse array one more time
+        // print frequencies of elements and mark
+        // frequencies as -1 so that same element
+        // is not printed multiple times.
+        for (int i = 0; i < n; i++)
+        {
+            if (mp.get(arr[i]) != -1)
+            {
+                System.out.println(arr[i] + " " + mp.get(arr[i]));
+                mp.put(arr[i], -1);
+            }
+        }
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        int arr[] = {10, 20, 20, 10, 10, 20, 5, 20};
+        int n = arr.length;
+        countFreq(arr, n);
+    }
+}
+ 
+// This code contributed by Rajput-Ji
+Output
+10 3
+20 4
+5 1
+Complexity Analysis:
+
+Time Complexity : O(n) 
+Auxiliary Space : O(n)
+-----------------------------------------------------------------
+class GFG
+{
+ 
+    static void countFreq(int arr[], int n)
+    {
+        Map<Integer, Integer> mp = new HashMap<>();
+ 
+        // Traverse through array elements and
+        // count frequencies
+        for (int i = 0; i < n; i++)
+        {
+            if (mp.containsKey(arr[i]))
+            {
+                mp.put(arr[i], mp.get(arr[i]) + 1);
+            }
+            else
+            {
+                mp.put(arr[i], 1);
+            }
+        }
+        // Traverse through map and print frequencies
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet())
+        {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+ 
+    // Driver code
+    public static void main(String args[])
+    {
+        int arr[] = {10, 20, 20, 10, 10, 20, 5, 20};
+        int n = arr.length;
+        countFreq(arr, n);
+    }
+}
+ 
+// This code contributed by Rajput-Ji
+Output
+5 1
+10 3
+20 4
+Time Complexity : O(n) 
+Auxiliary Space : O(n)
+---------------------------------------------------------------
+class GFG
+{
+public static void countFreq(int arr[], int n)
+{
+    boolean visited[] = new boolean[n];
+     
+    Arrays.fill(visited, false);
+ 
+    // Traverse through array elements and
+    // count frequencies
+    for (int i = 0; i < n; i++) {
+ 
+        // Skip this element if already processed
+        if (visited[i] == true)
+            continue;
+ 
+        // Count frequency
+        int count = 1;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                visited[j] = true;
+                count++;
+            }
+        }
+        System.out.println(arr[i] + " " + count);
+    }
+}
+ 
+// Driver code
+public static void main(String []args)
+{
+    int arr[] = new int[]{ 10, 20, 20, 10, 10, 20, 5, 20 };
+    int n = arr.length;
+    countFreq(arr, n);
+}
+}
+ 
+// This code contributed by Adarsh_Verma.
+Output
+10 3
+20 4
+5 1
+Complexity Analysis:
+
+Time Complexity : O(n2) 
+Auxiliary Space : O(n)
+--------------------------------------------------------------------------
+32) How do you stop a thread in java? [
+public class Main {
+ 
+    // static used here because
+    // a non-static variable cannot be referenced
+    // from a static context
+ 
+    // exit variable to stop both
+    // the main and inside threads
+    static volatile boolean exit = false;
+    public static void main(String[] args)
+    {
+ 
+        System.out.println("started main thread..");
+ 
+        // a thread inside main thread
+        new Thread() {
+            public void run()
+            {
+ 
+                // changes made to exit
+                // in main thread are visible here
+                System.out.println("started inside thread..");
+ 
+                // will not run infinitely
+                while (!exit) {
+                }
+ 
+                // this will be printed
+                System.out.println("exiting inside thread..");
+            }
+        }.start();
+ 
+        try {
+            Thread.sleep(500);
+        }
+        catch (InterruptedException e) {
+            System.out.println("Caught :" + e);
+        }
+ 
+        // so that we can stop the threads
+        exit = true;
+        System.out.println("exiting main thread..");
+    }
+}
+
+----------------------------------------------------------------
+ stopping a thread
+// using the interrupt() method
+ 
+class MyThread implements Runnable {
+ 
+    Thread t;
+ 
+    MyThread()
+    {
+        t = new Thread(this);
+        System.out.println("New thread: " + t);
+        t.start(); // Starting the thread
+    }
+ 
+    // execution of thread starts from run() method
+    public void run()
+    {
+        while (!Thread.interrupted()) {
+            System.out.println("Thread is running");
+        }
+        System.out.println("Thread has stopped.");
+    }
+}
+ 
+// Main class
+public class Main {
+    public static void main(String args[])
+    {
+        // creating objects t1 of MyThread
+        MyThread t1 = new MyThread();
+ 
+        try {
+            Thread.sleep(1);
+ 
+            // t1 is an object of MyThread
+            // which has an object t
+            // which is of type Thread
+            t1.t.interrupt();
+ 
+            Thread.sleep(5);
+        }
+        catch (InterruptedException e) {
+            System.out.println("Caught:" + e);
+        }
+        System.out.println("Exiting the main Thread");
+    }
+}
+Output: 
+--------------------------------------------------------------------------
+33) Write a java program to append text to a file? 
+
+Java Program to Append a String to the
+// End of a File
+ 
+// Importing input output classes
+import java.io.*;
+ 
+// Main class
+class GeeksforGeeks {
+ 
+    // Method 1
+    // TO append string into a file
+    public static void appendStrToFile(String fileName,
+                                       String str)
+    {
+        // Try block to check for exceptions
+        try {
+ 
+            // Open given file in append mode by creating an
+            // object of BufferedWriter class
+            BufferedWriter out = new BufferedWriter(
+                new FileWriter(fileName, true));
+ 
+            // Writing on output stream
+            out.write(str);
+            // Closing the connection
+            out.close();
+        }
+ 
+        // Catch block to handle the exceptions
+        catch (IOException e) {
+ 
+            // Display message when exception occurs
+            System.out.println("exception occurred" + e);
+        }
+    }
+ 
+    // Method 2
+    // main driver method
+    public static void main(String[] args) throws Exception
+    {
+        // Creating a sample file with some random text
+        String fileName = "Geek.txt";
+ 
+        // Try block to check for exceptions
+        try {
+ 
+            // Again operating same operations by passing
+            // file as
+            // parameter to read it
+            BufferedWriter out = new BufferedWriter(
+                new FileWriter(fileName));
+ 
+            // Writing on. file
+            out.write("Hello World:\n");
+ 
+            // Closing file connections
+            out.close();
+        }
+ 
+        // Catch block to handle exceptions
+        catch (IOException e) {
+ 
+            // Display message when error occurs
+            System.out.println("Exception Occurred" + e);
+        }
+ 
+        // Now appendinggiven str to above
+        // created file
+        String str = "This is GeeksforGeeks";
+ 
+        // Calling the above method
+        appendStrToFile(fileName, str);
+ 
+        // Let us print modified file
+        try {
+            BufferedReader in = new BufferedReader(
+                new FileReader("Geek.txt"));
+ 
+            String mystring;
+ 
+            // TIll there is content in string
+            // condition holds true
+            while ((mystring = in.readLine()) != null) {
+                System.out.println(mystring);
+            }
+        }
+ 
+        // Catch block to handle IO exceptions
+        catch (IOException e) {
+            System.out.println("Exception Occurred" + e);
+        }
+    }
+}
+--------------------------------------------------------------------------
+34) Write a java program to sort an ArrayList?
+public class GFG {
+    public static void main(String args[])
+    {
+  
+        // Get the ArrayList
+        ArrayList<String>
+            list = new ArrayList<String>();
+  
+        // Populate the ArrayList
+        list.add("Geeks");
+        list.add("For");
+        list.add("ForGeeks");
+        list.add("GeeksForGeeks");
+        list.add("A computer portal");
+  
+        // Print the unsorted ArrayList
+        System.out.println("Unsorted ArrayList: "
+                           + list);
+  
+        // Sorting ArrayList in ascending Order
+        // using Collection.sort() method
+        Collections.sort(list);
+  
+        // Print the sorted ArrayList
+        System.out.println("Sorted ArrayList "
+                           + "in Ascending order : "
+                           + list);
+    }
+}
+
+--------------------------------------------------------------------------
+35) All permutations of a string.
+public class Permutation 
+{ 
+    public static void main(String[] args) 
+    { 
+        String str = "ABC"; 
+        int n = str.length(); 
+        Permutation permutation = new Permutation(); 
+        permutation.permute(str, 0, n-1); 
+    } 
+  
+    /** 
+    * permutation function 
+    * @param str string to calculate permutation for 
+    * @param l starting index 
+    * @param r end index 
+    */
+    private void permute(String str, int l, int r) 
+    { 
+        if (l == r) 
+            System.out.println(str); 
+        else
+        { 
+            for (int i = l; i <= r; i++) 
+            { 
+                str = swap(str,l,i); 
+                permute(str, l+1, r); 
+                str = swap(str,l,i); 
+            } 
+        } 
+    } 
+  
+    /** 
+    * Swap Characters at position 
+    * @param a string value 
+    * @param i position 1 
+    * @param j position 2 
+    * @return swapped string 
+    */
+    public String swap(String a, int i, int j) 
+    { 
+        char temp; 
+        char[] charArray = a.toCharArray(); 
+        temp = charArray[i] ; 
+        charArray[i] = charArray[j]; 
+        charArray[j] = temp; 
+        return String.valueOf(charArray); 
+    } 
+  
+} 
+
+--------------------------------------------------------------------------
+36) Check number belongs to Fibonacci series or not.
+
+class GFG
+{
+    // A utility method that returns true if x is perfect square
+    static  boolean isPerfectSquare(int x)
+    {
+        int s = (int) Math.sqrt(x);
+        return (s*s == x);
+    }
+      
+    // Returns true if n is a Fibonacci Number, else false
+    static boolean isFibonacci(int n)
+    {
+        // n is Fibonacci if one of 5*n*n + 4 or 5*n*n - 4 or both
+        // is a perfect square
+        return isPerfectSquare(5*n*n + 4) ||
+               isPerfectSquare(5*n*n - 4);
+    }
+ 
+    // Driver method
+    public static void main(String[] args)
+    {
+        for (int i = 1; i <= 10; i++)
+             System.out.println(isFibonacci(i) ?  i +  " is a Fibonacci Number" :
+                                                  i + " is a not Fibonacci Number");
+    }
+--------------------------------------------------------------------------
+37) Spiral Matrix Program.
+class Solution {
+  
+    // Function to print in spiral order
+    public static List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> ans = new ArrayList<Integer>();
+  
+        if (matrix.length == 0)
+            return ans;
+  
+        int m = matrix.length, n = matrix[0].length;
+        boolean[][] seen = new boolean[m][n];
+        int[] dr = { 0, 1, 0, -1 };
+        int[] dc = { 1, 0, -1, 0 };
+        int x = 0, y = 0, di = 0;
+  
+        // Iterate from 0 to R * C - 1
+        for (int i = 0; i < m * n; i++) {
+            ans.add(matrix[x][y]);
+            seen[x][y] = true;
+            int cr = x + dr[di];
+            int cc = y + dc[di];
+  
+            if (0 <= cr && cr < m && 0 <= cc && cc < n
+                    && !seen[cr][cc]) {
+                x = cr;
+                y = cc;
+            } else {
+                di = (di + 1) % 4;
+                x += dr[di];
+                y += dc[di];
+            }
+        }
+        return ans;
+    }
+  
+    // Driver Code
+    public static void main(String[] args) {
+        int a[][] = { { 1, 2, 3, 4 },
+                { 5, 6, 7, 8 },
+                { 9, 10, 11, 12 },
+                { 13, 14, 15, 16 } };
+  
+        System.out.println(spiralOrder(a));
+    }
+}
+Output
+1 2 3 4 8 12 16 15 14 13 9 5 6 7 1
+
+--------------------------------------------------------------------------
+38) String to Integer and Integer to String Conversion program. 
+
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Custom input integers
+        int a = 1234;
+        int b = -1234;
+ 
+        // Converting integer to string
+        // using toString() method
+        String str1 = Integer.toString(a);
+        String str2 = Integer.toString(b);
+ 
+        // Printing the above strings that
+        // holds integer
+        System.out.println("String str1 = " + str1);
+        System.out.println("String str2 = " + str2);
+    }
+}
+-----------------------------------------------------------------
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Custom integer input
+        int c = 1234;
+ 
+        // Converting above integer to string
+        // using valueOf() Method
+        String str3 = String.valueOf(c);
+ 
+        // Printing the integer stored in above string
+        System.out.println("String str3 = " + str3);
+    }
+}
+------------------------------------------------------------------------
+class GFG {
+   
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Passing input integer as in argument and
+        // storing it in a string
+        String str3 = String.valueOf(1234);
+ 
+        // Printing the integer stored in above string
+        System.out.println("String str3 = " + str3);
+    }
+}
+------------------------------------------------------------------
+import java.util.*;
+ 
+// Main class
+class GFG {
+   
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Custom input integer
+        int d = 1234;
+ 
+        // Creating an object of Integer class
+        // inside main() method
+        Integer obj = new Integer(d);
+        String str4 = obj.toString();
+ 
+        // Printing the above string
+        // holding integer value
+        System.out.println("String str4 = " + str4);
+    }
+}
+-------------------------------------------------------------------
+import java.util.*;
+ 
+// Main class
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Custom input integer
+        int d = 1234;
+ 
+        // Converting integer to string
+        // using toStirng() method of Integer class
+        String str4 = new Integer(d).toString();
+ 
+        // Printing the integer value stored in above string
+        System.out.println("String str4 = " + str4);
+    }
+}
+------------------------------------------------------------------
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Custom integer input
+        int e = 12345;
+ 
+        // Creating an object of DecimalFormat class
+        // inside main() method
+        DecimalFormat df = new DecimalFormat("#");
+ 
+        // Formatting the integer to string
+        // and storing it in a string
+        String str5 = df.format(e);
+ 
+        // Printing the above stored value
+        // inside a string
+        System.out.println(str5);
+    }
+}
+----------------------------------------------------------------
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Input integer value
+        int e = 12345;
+ 
+        // Creating an object of DecimalFormat class
+        // inside main() method
+        DecimalFormat df = new DecimalFormat("#,###");
+ 
+        // Converting above integral value to string
+        String Str5 = df.format(e);
+ 
+        // Printing the value stored in above string
+        System.out.println(Str5);
+    }
+}
+--------------------------------------------------------------
+class GFG {
+   
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Integer input value
+        int f = 1234;
+ 
+        // Creating an object of StringBuffer class
+        StringBuffer sb = new StringBuffer();
+        sb.append(f);
+ 
+        String str6 = sb.toString();
+ 
+        System.out.println("String str6 = " + str6);
+    }
+}
+----------------------------------------------------------------
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Input integer
+        int g = 1234;
+ 
+        // Creating an object of StringBuilder class
+        // inside main() method
+        StringBuilder sb = new StringBuilder();
+        sb.append(g);
+ 
+        String str7 = sb.toString();
+ 
+        // Printing the value stored in above string
+        System.out.println("String str7 = " + str7);
+    }
+}
+----------------------------------------------------
+/ Java Program to Illustrate Integer to String Conversions
+// Using Special Radix In Binary Numbers
+ 
+// Main class
+class GFG {
+ 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Input integer
+        int h = 255;
+        String binaryString = Integer.toBinaryString(h);
+ 
+        // Printing the binary number stored in above string
+        System.out.println(binaryString);
+    }
+}
+--------------------------------------------------------------------------
+39) How to make collection read-only in java?
+
+// Java Program to make Collections Read-Only
+ 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+ 
+public class GFG {
+ 
+    public static void main(String[] args)
+    {
+        // List of Integer
+        List<Integer> numbers = new ArrayList<>();
+ 
+        // List have 1 to 10 numbers
+        for (int i = 1; i <= 10; i++) {
+            numbers.add(i);
+        }
+ 
+        // Iterate on the stream of integers and
+        // print them
+        numbers.stream().forEach(System.out::print);
+ 
+        // Now we are adding one more element
+        numbers.add(11);
+ 
+        // Removing element from the list
+        numbers.remove(8);
+ 
+        // Updating List¶
+        numbers.set(4, 4);
+ 
+        System.out.println(
+            "\nAfter Performing Some Operations");
+ 
+        numbers.stream().forEach(System.out::print);
+ 
+        System.out.println(
+            "\nHence By default Collections object is Readable and Writable");
+ 
+        // Now making Read-Only List
+        // Using unmodifiableList() method.
+        try {
+            numbers = Collections.unmodifiableList(numbers);
+ 
+            // This line will generate an Exception
+            numbers.remove(11);
+        }
+        catch (UnsupportedOperationException
+                   unsupportedOperationException) {
+            System.out.println(
+                "Exceptions is "
+                + unsupportedOperationException);
+        }
+        finally {
+            System.out.println(numbers.get(3));
+            System.out.println(
+                "Now list is only Read-Only");
+        }
+    }
+}
+Output
+12345678910
+After Performing Some Operations
+123446781011
+Hence By default Collections object is Readable and Writable
+Exceptions is java.lang.UnsupportedOperationException
+4
+Now list is only Read-Only
+
+--------------------------------------------------------------------------
+40) How to make text file read-only in java?
+
+public class GFG {
+   
+    public static void main(String[] args)
+    {
+        // flag variable which contains the boolean
+        // value returned by setReadOnly() function
+        boolean flag;
+       
+        try {
+           
+            File file = new File("/home/mayur/GFG.java");
+           
+            // creates a new file
+            file.createNewFile();
+           
+            // flag the file to be read-only
+            flag = file.setReadOnly();
+           
+            System.out.println("Is File is read-only ? : "
+                               + flag);
+           
+            // checking whether Is file  writable
+            flag = file.canWrite();
+            System.out.println("Is File is writable ? : "
+                               + flag);
+        }
+       
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+--------------------------------------------------------------------------
+41) How to remove all vowels from a string in java?
+
+public class Practice {
+ 
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'a' || s.charAt(i) == 'e'
+                || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+                || s.charAt(i) == 'u' || s.charAt(i) == 'A'
+                || s.charAt(i) == 'E' || s.charAt(i) == 'I'
+                || s.charAt(i) == 'O'
+                || s.charAt(i) == 'U') {
+                continue;
+            }
+            else {
+                System.out.print(s.charAt(i));
+            }
+        }
+    }
+}
+--------------------------------------------------------
+class GFG
+{   
+    static String remVowel(String str)
+    {
+         return str.replaceAll("[aeiouAEIOU]", "");
+    }
+     
+    // Driver Code
+    public static void main(String[] args)
+    {
+        String str = "GeeeksforGeeks - A Computer Science Portal for Geeks";       
+        System.out.println(remVowel(str));
+    }
+}
+Output :
+GksfrGks -  Cmptr Scnc Prtl fr Gks
+--------------------------------------------------------------------------
+42) How to copy a text file in java?
+
+import java.nio.file.Files;
+import java.io.*;
+// save the file named as GFG.java
+public class GFG{
+   
+    // main method
+    public static void main(String[] args) throws IOException{
+       
+        // creating two channels
+        // one input and other output   
+        File src = new File("C:\\Users\\Dipak\\Desktop\\input.txt");
+        File dest = new File("C:\\Users\\Dipak\\Desktop\\output.txt");
+             
+        // using copy(InputStream,Path Target); method
+        Files.copy(src.toPath(), dest.toPath());
+       
+        // here we are not required to have an
+        // output file at the specified target.
+        // same way we can use other method also.
+             
+    }
+}
+------------------------------------------------------------
+ Importing java.nio package for network linking
+// Importing input output classes
+import java.io.*;
+import java.nio.channels.FileChannel;
+ 
+// Main Class
+public class GFG {
+ 
+    // Main driver method
+    public static void main(String[] args)
+        throws IOException
+    {
+ 
+        // Creating two channels one input and other output
+        // by creating two objects of FileChannel Class
+        FileChannel src
+            = new FileInputStream(
+                  "C:\\Users\\Dipak\\Desktop\\input.txt")
+                  .getChannel();
+        FileChannel dest
+            = new FileOutputStream(
+                  "C:\\Users\\Dipak\\Desktop\\output.txt")
+                  .getChannel();
+ 
+        // Try block to check for exceptions
+        try {
+ 
+            // Transferring files in one go from source to
+            // destination using transferFrom() method
+            dest.transferFrom(src, 0, src.size());
+            // we can also use transferTo
+            // src.transferTo(0,src.size(),dest);
+        }
+ 
+        // finally keyword is good practice to save space in
+        // memory by closing files, connections, streams
+        finally {
+ 
+            // Closing the channels this makes the space
+            // free
+ 
+            // Closing the source channel
+            src.close();
+ 
+            // Closing the destination channel
+            dest.close();
+        }
+    }
+}
+Output: 
+
+For the above program, we require one input.txt and one output.txt file. Initially, both the text files look like this
+------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+43) How to find the most frequent element in an array in java?
+
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+ 
+class GFG {
+     
+    static int mostFrequent(int arr[], int n)
+    {
+         
+        // Insert all elements in hash
+        Map<Integer, Integer> hp =
+               new HashMap<Integer, Integer>();
+         
+        for(int i = 0; i < n; i++)
+        {
+            int key = arr[i];
+            if(hp.containsKey(key))
+            {
+                int freq = hp.get(key);
+                freq++;
+                hp.put(key, freq);
+            }
+            else
+            {
+                hp.put(key, 1);
+            }
+        }
+         
+        // find max frequency.
+        int max_count = 0, res = -1;
+         
+        for(Entry<Integer, Integer> val : hp.entrySet())
+        {
+            if (max_count < val.getValue())
+            {
+                res = val.getKey();
+                max_count = val.getValue();
+            }
+        }
+         
+        return res;
+    }
+     
+    // Driver code
+    public static void main (String[] args) {
+         
+        int arr[] = {40,50,30,40,50,30,30};
+        int n = arr.length;
+         
+        System.out.println(mostFrequent(arr, n));
+    }
+}
+ 
+-----------------------------------------------------
+class GFG
+{
+ 
+static int maxFreq(int []arr, int n)
+{
+   
+    // using moore's voting algorithm
+    int res = 0;
+    int count = 1;
+    for(int i = 1; i < n; i++) {
+        if(arr[i] == arr[res]) {
+            count++;
+        } else {
+            count--;
+        }
+         
+        if(count == 0) {
+            res = i;
+            count = 1;
+        }
+         
+    }
+     
+    return arr[res];
+}
+ 
+  // Driver code
+public static void main (String[] args) {
+    int arr[] = {40,50,30,40,50,30,30};
+    int n = arr.length;
+    int freq =  maxFreq(arr , n);
+    int count = 0;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == freq) {
+            count++;
+        }
+    }
+    System.out.println("Element " +maxFreq(arr , n) +" occurs "  +count +" times" );
+}
+     
+}
+
+--------------------------------------------------------------------------
+44) Difference between two dates in java
+
+class GFG {
+  
+    // Function to print difference in
+    // time start_date and end_date
+    static void
+    findDifference(String start_date,
+                   String end_date)
+    {
+  
+        // SimpleDateFormat converts the
+        // string format to date object
+        SimpleDateFormat sdf
+            = new SimpleDateFormat(
+                "dd-MM-yyyy HH:mm:ss");
+  
+        // Try Block
+        try {
+  
+            // parse method is used to parse
+            // the text from a string to
+            // produce the date
+            Date d1 = sdf.parse(start_date);
+            Date d2 = sdf.parse(end_date);
+  
+            // Calucalte time difference
+            // in milliseconds
+            long difference_In_Time
+                = d2.getTime() - d1.getTime();
+  
+            // Calucalte time difference in
+            // seconds, minutes, hours, years,
+            // and days
+            long difference_In_Seconds
+                = (difference_In_Time
+                   / 1000)
+                  % 60;
+  
+            long difference_In_Minutes
+                = (difference_In_Time
+                   / (1000 * 60))
+                  % 60;
+  
+            long difference_In_Hours
+                = (difference_In_Time
+                   / (1000 * 60 * 60))
+                  % 24;
+  
+            long difference_In_Years
+                = (difference_In_Time
+                   / (1000l * 60 * 60 * 24 * 365));
+  
+            long difference_In_Days
+                = (difference_In_Time
+                   / (1000 * 60 * 60 * 24))
+                  % 365;
+  
+            // Print the date difference in
+            // years, in days, in hours, in
+            // minutes, and in seconds
+  
+            System.out.print(
+                "Difference "
+                + "between two dates is: ");
+  
+            System.out.println(
+                difference_In_Years
+                + " years, "
+                + difference_In_Days
+                + " days, "
+                + difference_In_Hours
+                + " hours, "
+                + difference_In_Minutes
+                + " minutes, "
+                + difference_In_Seconds
+                + " seconds");
+        }
+  
+        // Catch the Exception
+        catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+  
+    // Driver Code
+    public static void main(String[] args)
+    {
+        // Given start Date
+        String start_date
+            = "10-01-2018 01:10:20";
+  
+        // Given end Date
+        String end_date
+            = "10-06-2020 06:30:50";
+  
+        // Function Call
+        findDifference(start_date, end_date);
+    }
+}
+--------------------------------------------------------
+import java.time.*;
+import java.util.*;
+class GFG {
+  
+    // Function to print difference in
+    // time start_date and end_date
+    static void
+    findDifference(LocalDate start_date,
+                   LocalDate end_date)
+    {
+  
+        // find the period between
+        // the start and end date
+        Period diff
+            = Period
+                  .between(start_date,
+                           end_date);
+  
+        // Print the date difference
+        // in years, months, and days
+        System.out.print(
+            "Difference "
+            + "between two dates is: ");
+  
+        // Print the result
+        System.out.printf(
+            "%d years, %d months"
+                + " and %d days ",
+            diff.getYears(),
+            diff.getMonths(),
+            diff.getDays());
+    }
+  
+    // Driver Code
+    public static void main(String[] args)
+    {
+        // Start date
+        LocalDate start_date
+            = LocalDate.of(2018, 01, 10);
+  
+        // End date
+        LocalDate end_date
+            = LocalDate.of(2020, 06, 10);
+  
+        // Function Call
+        findDifference(start_date,
+                       end_date);
+    }
+}
+
+--------------------------------------------------------------------------
+45)  How to set file permissions in java?
+
+// Java Program to Check the Current File Permissions
+ 
+// Importing required classes
+import java.io.*;
+ 
+// Main class
+public class Test {
+ 
+    // Main driver method
+    public static void main(String[] args)
+    {
+ 
+        // Creating a file by
+        // creating object of File class
+        File file
+            = new File("C:\\Users\\Mayank\\Desktop\\1.txt");
+ 
+        // Checking if the file exists
+        // using exists() method of File class
+        boolean exists = file.exists();
+        if (exists == true) {
+ 
+            // Printing the permissions associated
+            // with the file
+            System.out.println("Executable: "
+                               + file.canExecute());
+            System.out.println("Readable: "
+                               + file.canRead());
+            System.out.println("Writable: "
+                               + file.canWrite());
+        }
+ 
+        // If we enter else it means
+        // file does not exists
+        else {
+            System.out.println("File not found.");
+        }
+    }
+}
+
+--------------------------------------------------------------------------
+46) How to list all files in a directory in java
+-------------------------------------------------------------------------
+47) Input: S1 = ABCD, S2 = CDAB
+Output: Strings are rotations of each other
+
+Input: S1 = ABCD, S2 = ACBD
+Output: Strings are not rotations of each other
+->
+a) Program to check if strings are rotations of each other or not using queue:
+// Java program for the above approach
+ 
+import java.util.*;
+ 
+class GFG {
+    static boolean check_rotation(String s, String goal)
+    {
+        if (s.length() != goal.length())
+            return false;
+ 
+        Queue<Character> q1 = new LinkedList<>();
+        for (int i = 0; i < s.length(); i++) {
+            q1.add(s.charAt(i));
+        }
+ 
+        Queue<Character> q2 = new LinkedList<>();
+        for (int i = 0; i < goal.length(); i++) {
+            q2.add(goal.charAt(i));
+        }
+ 
+        int k = goal.length();
+        while (k > 0) {
+            k--;
+            char ch = q2.peek();
+            q2.remove();
+            q2.add(ch);
+            if (q2.equals(q1))
+                return true;
+        }
+ 
+        return false;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        String str1 = "AACD";
+        String str2 = "ACDA";
+ 
+        // Function call
+        if (check_rotation(str1, str2))
+            System.out.println(
+                "Strings are rotations of each other");
+        else
+            System.out.printf(
+                "Strings are not rotations of each other");
+    }
+}
+ -----------------------------------------------------------------------------------------
+b) 
+/ Java program for the above approach
+ 
+import java.io.*;
+import java.util.*;
+ 
+class GFG {
+ 
+    // java program to check if two strings are rotation of
+    // each other or not
+    static boolean checkString(String s1, String s2,
+                               int indexFound, int Size)
+    {
+        for (int i = 0; i < Size; i++) {
+ 
+            // check whether the character is equal or not
+            if (s1.charAt(i)
+                != s2.charAt((indexFound + i) % Size))
+                return false;
+ 
+            // %Size keeps (indexFound+i) in bounds,
+            // since it ensures it's value is always less
+            // than Size
+        }
+ 
+        return true;
+    }
+ 
+    // Driver code
+    public static void main(String args[])
+    {
+        String s1 = "abcd";
+        String s2 = "cdab";
+ 
+        if (s1.length() != s2.length()) {
+            System.out.println(
+                "s2 is not a rotation on s1");
+        }
+        else {
+ 
+            ArrayList<Integer> indexes = new ArrayList<
+                Integer>(); // store occurrences of the
+                            // first character of s1
+ 
+            int Size = s1.length();
+ 
+            char firstChar = s1.charAt(0);
+ 
+            for (int i = 0; i < Size; i++) {
+                if (s2.charAt(i) == firstChar) {
+                    indexes.add(i);
+                }
+            }
+ 
+            boolean isRotation = false;
+ 
+            // check if the strings are rotation of each
+            // other for every occurrence of firstChar in s2
+            for (int idx : indexes) {
+                isRotation = checkString(s1, s2, idx, Size);
+ 
+                if (isRotation)
+                    break;
+            }
+ 
+            if (isRotation)
+                System.out.println(
+                    "Strings are rotations of each other");
+            else
+                System.out.println(
+                    "Strings are not rotations of each other");
+        }
+    }
+}
+------------------------------------------------------------------------------

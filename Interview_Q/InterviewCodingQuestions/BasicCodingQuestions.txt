@@ -1,0 +1,639 @@
+//1...even/odd number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int n1;
+		System.out.println("Enter any number");
+		Scanner sc=new Scanner(System.in);
+		n1=sc.nextInt();
+		if(n1%2==0)
+		{
+		    System.out.println("Even Number");
+		}
+		else
+		{
+		    System.out.println("Odd Number");    
+		}
+	}
+}
+........................................................................................................................................................
+//2...Fibonacchhe series
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int a,b,n,c,i;
+        System.out.println("Enter Two numbers");
+        Scanner sc=new Scanner(System.in);
+        a=sc.nextInt();
+        b=sc.nextInt();
+        System.out.println("Enter size");
+        n=sc.nextInt();
+        System.out.println("Fibonachhee Series are");
+        System.out.println(a);
+        System.out.println(b);
+        for(i=2;i<n;i++)
+        {
+            c=a+b;
+            System.out.println(c);
+            a=b;
+            b=c;
+        }
+    }
+}
+....................................................................................................................................................................
+//3...Armstrong number
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int num,num1,rem,count=0;
+        System.out.println("Enter any number");
+        Scanner sc=new Scanner(System.in);
+        num=sc.nextInt();
+        num1=num;
+        while(num!=0)
+        {
+            rem=num%10;
+            num=num/10;
+            count=count+(rem*rem*rem);
+        }
+        if(count==num1)
+        {
+            System.out.println("Armstrong Number");
+        }
+        else
+        {
+            System.out.println("Not Armstrong Number");
+        }
+    }
+}
+........................................................................................................................................................................
+//4...Prime Number
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int num,i,count=0;
+        System.out.println("Enter any number");
+        Scanner sc=new Scanner(System.in);
+        num=sc.nextInt();
+        for(i=1;i<=num;i++)
+        {
+            if(num%i==0)
+            {
+                count++;
+            }
+        }
+        if(count==2)
+        {
+            System.out.println("Prime Number");
+        }
+        else
+        {
+            System.out.println("Not Prime Number");
+        }
+    }
+}
+....................................................................................................................................................
+//5...Prime numbers from any numbers ex(1 t0 50)
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n,i,j,count=0;
+        System.out.println("Enter size");
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        System.out.println("Prime numbers are");
+        for(i=1;i<=n;i++)
+        {
+            for(j=1;j<=i;j++)
+            {
+                if(i%j==0)
+                {
+                    count++;
+                }
+            }
+            if(count==2)
+            {
+                System.out.println(i);
+            }
+            count=0;
+        }
+    }
+}
+.............................................................................................................................................................................
+//6...Palindrome Number
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int num,num1,count=0,rem;
+        System.out.println("Enter any Number");
+        Scanner sc=new Scanner(System.in);
+        num=sc.nextInt();
+        num1=num;
+        while(num!=0)
+        {
+            rem=num%10;
+            num=num/10;
+            count=(count*10)+rem;
+        }
+        if(count==num1)
+        {
+            System.out.println("Palindrome Number");
+        }
+        else
+        {
+            System.out.println("Not Palindrome Number");    
+        }
+    }
+}
+.........................................................................................................................................
+//7...reverse Number
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int num,num1,count=0,rem;
+        System.out.println("Enter any number");
+        Scanner sc=new Scanner(System.in);
+        num=sc.nextInt();
+        while(num!=0)
+        {
+            rem=num%10;
+            num=num/10;
+            count=(count*10)+rem;
+        }
+        System.out.print("reverse number is ");
+        System.out.println(count);
+    }
+}
+........................................................................................................................................................
+//8...Sorting using temp or using only two variable
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n,i,j,temp;
+        int arr[]=new int[100];
+        System.out.println("Enter array size");
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        System.out.println("Enter array Element");
+        for(i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("Array element after sort");
+        for(i=0;i<n-1;i++)
+        {
+            for(j=0;j<n-1;j++)
+            {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];          // arr[j]=arr[j+1];
+                arr[j]=arr[j+1];      // arr[j+1]=arr[j]-arr[j+1];
+                arr[j+1]=temp;        // arr[j]=arr[j]-arr[j+1];
+            }
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            System.out.println(arr[i]);
+        }
+    }
+}
+............................................................................................................................................................
+//9...reverse the string
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n=0,i;
+        String str;
+        System.out.println("Enter any string");
+        Scanner sc =new Scanner(System.in);
+        str=sc.nextLine();
+        char ch[]=str.toCharArray();
+        n=ch.length;
+        for(i=n-1;i>=0;i--)
+        {
+            System.out.print(ch[i]);
+        }
+    }
+}
+....................................................................................................
+//10...reverse string
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        char temp;
+        int n,j,i;
+        String str;
+        System.out.println("Enter any string");
+        Scanner sc=new Scanner(System.in);
+        str=sc.nextLine();
+        char ch[]=str.toCharArray();
+        n=ch.length;
+        i=0;
+        for(j=n-1;j>=0;j--,i++)
+        {
+            if(i<j)
+            {
+                temp=ch[i];
+                ch[i]=ch[j];
+                ch[j]=temp;
+            }
+        }
+        for(char c : ch)
+        {
+            System.out.print(c);
+        }
+    }
+}
+.....................................................................................................................
+//11...palindrome string
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n,i,j;
+        String str;
+        System.out.println("Enter any string");
+        Scanner sc=new Scanner(System.in);
+        str=sc.nextLine();
+        char ch[]=str.toCharArray();
+        n=ch.length;
+        i=0;
+        for(j=n-1;j>=0;j--,i++)
+        {
+            if(i<j)
+            {
+                if(ch[i]!=ch[j])
+                {
+                    System.out.println("String is not palindrome");
+                    break;
+                }
+            }
+            else
+            {
+                System.out.println("String is palindrome");
+                break;
+            }
+        }
+    }
+}
+...........................................................................................................................
+//12...Leap year
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int year;
+        System.out.println("Enter any year");
+        Scanner sc=new Scanner(System.in);
+        year=sc.nextInt();
+        if(year%100!=0)
+        {
+            if(year%4==0)
+            {
+                System.out.println("Leap Year");
+            }
+            else
+            {
+                System.out.println("Not Leap Year");   
+            }
+        }
+        else if(year%400==0)
+        {
+            System.out.println("Leap year");
+        }
+        else
+        {
+            System.out.println("Not Leap Year");
+        }
+    }
+}
+.............................................................................................................................................
+//13...Leap year Using logical AND and Logical OR
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int year;
+        System.out.println("Enter any year");
+        Scanner sc=new Scanner(System.in);
+        year=sc.nextInt();
+        if((year%100!=0 && year%4==0) || year%400==0)
+        {
+            System.out.println("Leap Year");
+        }
+        else
+        {
+            System.out.println("Not Leap Year");
+        }
+    }
+}
+.....................................................................................................................
+//14....count repetation of words in string
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n,i,j,count=1;
+        String str;
+        System.out.println("Enter any string");
+        Scanner sc=new Scanner(System.in);
+        str=sc.nextLine();
+        char ch[]=str.toCharArray();
+        n=ch.length;
+        for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if(ch[i]==ch[j])
+                {
+                    count++;
+                    ch[j]=0;
+                }
+            }
+            if(ch[i]!=0 && count>1)
+            {
+                System.out.println("count of "+ch[i]+" is : "+count);
+            }
+            count=1;
+        }
+    }
+}
+
+..................................................................................................................................................
+//15....count number of vowels in the string
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int n,i,count=0;;
+        String str;
+        System.out.println("Enter any string");
+        Scanner sc=new Scanner(System.in);
+        str=sc.nextLine();
+        char ch[]=str.toCharArray();
+        n=ch.length;
+        for(i=0;i<n;i++)
+        {
+            if(ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u'||
+            ch[i]=='A'||ch[i]=='E'||ch[i]=='I'||ch[i]=='O'||ch[i]=='U')
+            {
+                System.out.println(ch[i]);
+                count++;
+            }
+        }
+        System.out.println("Number of vowels are : "+count);
+    }
+}
+
+.........................................................................................................................................
+//16...Repeted numbers in array
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        
+        int n,i,j,count=1;
+        System.out.println("Enter size");
+        Scanner scan=new Scanner(System.in);
+        n=scan.nextInt();
+        int arr[]=new int[n];
+        System.out.println("Enter array element");
+        for(i=0;i<n;i++)
+        {
+            arr[i]=scan.nextInt();
+        }
+        System.out.println("Repeted numbers are");
+        for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                count++;
+                arr[j]=0;
+                }
+            }
+            if(arr[i]!=0 && count>1)
+            {
+                System.out.println(arr[i]);
+                count=1;
+            }
+        }
+        
+    }
+}
+.....................................................................................................................................................
+//17...... Anagram
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) throws Exception
+    {
+        try
+        {
+            String str1;
+            String str2;
+            Scanner scan=new Scanner(System.in);
+            str1=scan.nextLine();
+            str2=scan.nextLine();
+            //str1=str1.replace(" ","");
+            //str2=str2.replace(" ","");
+            //str1=str1.toLowerCase();
+            //str2=str2.toLowerCase();
+            char ch1[]=str1.toCharArray();
+            char ch2[]=str2.toCharArray();
+            Arrays.sort(ch1);
+            Arrays.sort(ch2);
+            Boolean b=Arrays.equals(ch1,ch2);
+            if(b==true)
+            {
+                System.out.println("Anagram");
+            }
+            else
+            {
+                System.out.println("Not Anagram");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error");
+        }
+    }
+}
+...........................................................................................................................................
+//18.....anagram
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int i,j,n;
+        String str1;
+        String str2;
+        char temp;
+        Scanner scan=new Scanner(System.in);
+        str1=scan.nextLine();
+        str2=scan.nextLine();
+        
+        char ch1[]=str1.toCharArray();
+        char ch2[]=str2.toCharArray();
+        n=ch1.length;
+        for(i=0;i<n-1;i++)
+        {
+            for(j=0;j<n-1;j++)
+            {
+                if(ch1[j]>ch1[j+1])
+                {
+                    temp=ch1[j];
+                    ch1[j]=ch1[j+1];
+                    ch1[j+1]=temp;
+                }
+            }
+        }
+        for(i=0;i<n-1;i++)
+        {
+            for(j=0;j<n-1;j++)
+            {
+                if(ch2[j]>ch2[j+1])
+                {
+                    temp=ch2[j];
+                    ch2[j]=ch2[j+1];
+                    ch2[j+1]=temp;
+                }
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+            if(ch1[i]!=ch2[i])
+            {
+                System.out.println("Not Anagram");
+                System.exit(0);
+            }
+        }
+        System.out.println("Anagram");
+    }
+}
+.....................................................................................................................
+
+
+// collection basic
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Collection c = new ArrayList();
+        c.add(22);
+        c.add("Gundaji");
+        c.add("Latur");
+        c.remove("Gundaji");
+        c.remove("Latur");
+        Iterator i=c.iterator();
+        while(i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+        for(Object o : c)
+        {
+            System.out.println(o);
+        }
+    }
+}
+................................................................................................................................................
+// collections List
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        List li=new ArrayList();
+        li.add(22);
+        li.add(2);
+        li.add(10);
+        li.add(15);
+        li.add(1,66);
+        
+      /*  Iterator i=li.iterator();     // Method 1:for printing output
+        while(i.hasNext())
+        {
+            System.out.println(i.next());
+        }*/
+        
+      for(Object o : li)          //Method 2:for printing output 
+        {
+            System.out.println(o);
+        }
+        
+        //Collections.sort(li); 
+        //li.forEach(System.out::println);  // Methode 3:for printing output
+         
+    }
+}
+.............................................................................................................................
+//Hashmap
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Map<String,String> map=new HashMap<>();
+        map.put("Gundaji","9764681363");
+        map.put("Ajinkya","9876543210");
+        Set<String> set=map.keySet();
+        
+        for(String s : set)
+        {
+            System.out.println(map.get(s));
+        }
+    }
+}
+...................................................................................................................................
+"Credit- Mayuresh Jaiswal "Sep20"

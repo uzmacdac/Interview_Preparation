@@ -1,0 +1,71 @@
+
+
+
+
+
+---------------------------------------------
+1) What is the purpose of the finalize() method?
+
+The finalize() method is invoked just before the object is garbage collected. It is used to perform cleanup processing. The Garbage collector of JVM collects only those objects that are created by new keyword. So if you have created an object without new, you can use the finalize method to perform cleanup processing (destroying remaining objects). The cleanup processing is the process to free up all the resources, network which was previously used and no longer needed. It is essential to remember that it is not a reserved keyword, finalize method is present in the object class hence it is available in every class as object class is the superclass of every class in java. Here, we must note that neither finalization nor garbage collection is guaranteed. Consider the following example.
+
+public class FinalizeTest {  
+    int j=12;  
+    void add()  
+    {  
+        j=j+12;  
+        System.out.println("J="+j);  
+    }  
+    public void finalize()  
+    {  
+        System.out.println("Object is garbage collected");  
+    }  
+    public static void main(String[] args) {  
+        new FinalizeTest().add();  
+        System.gc();  
+        new FinalizeTest().add();  
+    }  
+}  
+
+------------------------------------------
+
+Why abstract classes have a constructor? 
+
+The main purpose of the constructor is to initialize the newly created object. In abstract class, we have an instance variable, abstract methods, and non-abstract methods. We need to initialize the non-abstract methods and instance variables, therefore abstract classes have a constructor.
+Also, even if we don’t provide any constructor the compiler will add default constructor in an abstract class.
+An abstract class can be inherited by any number of sub-classes, thus functionality of constructor present in abstract class can be used by them.
+The constructor inside the abstract class can only be called during constructor chaining i.e. when we create an instance of sub-classes. This is also one of the reasons abstract class can have a constructor.
+
+--------------------------------------------
+
+Why interfaces can not have the constructor?
+
+An Interface is a complete abstraction of class. All data members present in the interface are by default public, static, and final. All the static final fields should be assigned values at the time of declaration, otherwise it will throw compilation error saying “variable variable_Name not initialized in default constructor”.
+The methods inside the interface are by default public abstract which means the method implementation cannot be provided by the interface itself, it has to be provided by the implementing class. Therefore, no need of having a constructor inside the interface.
+A constructor is used to initializing non-static data members and as there are no non-static data members in the interface, there is no need of constructor
+Methods present in the interface are only declared not defined, As there is no implementation of methods, there is no need of making objects for calling methods in the interface and thus no point of having constructor in it.
+If we try to create a constructor inside the interface, the compiler will give a compile-time error.
+
+
+-------------------------------------------------
+
+When should you use an abstract class?
+
+An abstract class is a great choice if you are bringing into account the inheritance concept because it provides the common base class implementation to the derived classes.
+An abstract class is also good if you want to declare non-public members. In an interface, all methods must be public.
+If you want to add new methods in the future, then it is great to go with the abstract class. Because if you add new methods to the interface, then all of the classes that are already implemented in the interface will have to be changed in order to implement these new methods.
+If you want to create multiple versions of your component, then go with the abstract class. Abstract classes provide a simple and easy way to version your components. When you go with updating the base class, all of the inheriting classes would be automatically updated with the change. Interfaces, on the other hand, can’t be changed once these are created. If you want a new version of the interface, then you must create a new interface.
+Abstract classes always have the advantage of allowing better forwarding compatibility. Once the clients are onto an interface then you simply can't change it in the end. But if the abstract class is set up, then you can still add the behavior without breaking the existing code.
+An abstract class is used if you want to provide a common, implemented functionality among all the implementations of the component. Abstract classes will allow you to partially implement your class, whereas interfaces would have no implementation for any members whatsoever
+---------------------------------------------------
+
+When Should You Use an Interface?
+
+If you are creating functionality that will be useful across a wide range of objects, then you must use an interface. Abstract classes, at the end of the day, should be used for objects that are closely related. But the interfaces are best suited for providing common functionality to unrelated cases.
+Interfaces are a great choice if you think that the API won’t be changing for a while.
+Interfaces are also a great choice. If you want to have something similar to the multiple inheritances, then you can implement various interfaces.
+If we are going to design the small, concise bits of functionality, then you must use interfaces. But if you are designing the large functional units, then you must use an abstract class.
+But, at the end of the day, it all comes down to what you require and what you are going to do about it. The same functionalities can be accomplished with both interface and abstract classes. With the coding standards, the interface would help you accomplish the abstraction and polymorphism which are among the main principles of coding or programming.
+
+It also helps to keep your code loosely coupled instead of tightly coupled, which happens when the high-level modules depend on the low-level modules as well. Interfaces can also be used for the dependency injection that makes it easier to mock the derived classes when testing.
+
+If you want to become a coding expert or programming enthusiast, then join an IT boot camp right now to work on your skillset and acquire more knowledge on the subject. QuickStart’s web developer Bootcamp can help you earn the certifications you need to become an expert at web development. 

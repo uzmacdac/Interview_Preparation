@@ -1,0 +1,24 @@
+ech. Round*
+1)Introduction 
+2)OOPS
+3)polymorphism detials with implantation.
+4)collection hiracracy.
+5)list and set difference.
+6)implementation of array list.
+7)sql basic query.
+8)java 8 features used in your project.
+9)flow of your projects
+10) tables in your project.
+11) CSS how to apply.
+Etc.
+
+1) oops concepts
+2) exception and give me brief info about it 
+3) write code of thread exception using both techniques 
+4) write code for triangle numbers 
+5) explain polymorphism then he gave me scenario of family and ask me to do code which have polymorphism conepts overriding and overloading 
+6) then he asked me about collections and ask me interface's unique property ex.set list etc ....
+7) then annotation and layerd architecture of project 
+8) we used jwt token so he ask about encryption and decryption process 
+9) hibernate connection with spring boot without springboot 
+10) database basic query of employee class ask abou joins

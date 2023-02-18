@@ -1,0 +1,146 @@
+Full Stack Interview Question :
+
+https://github.com/Khranovskiy/1001-Full-Stack-Interview-Questions-And-Answers
+
+---------------------------------------------------
+Round 1
+1. Explain oops concepts in a non-technical way
+2. What was your favorite subject (chose DB) 
+3. Various scenario based DB queries
+4. What are indexes
+->
+	Indexing is a way to optimize the performance of a database by minimizing the number of disk accesses required when a query is processed. It is a data structure technique which is used to quickly locate and access the data in a database. 
+
+Indexes are created using a few database columns. 
+
+The first column is the Search key that contains a copy of the primary key or candidate key of the table. These values are stored in sorted order so that the corresponding data can be accessed quickly. 
+Note: The data may or may not be stored in sorted order.
+The second column is the Data Reference or Pointer which contains a set of pointers holding the address of the disk block where that particular key value can be found.
+----------------------------------------------------
+5. What is query optimization.
+->
+
+	Query optimization is of great importance for the performance of a relational database, especially for the execution of complex SQL statements. A query optimizer decides the best methods for implementing each query.
+
+The query optimizer selects, for instance, whether or not to use indexes for a given query, and which join methods to use when joining multiple tables. These decisions have a tremendous effect on SQL performance, and query optimization is a key technology for every application, from operational Systems to data warehouse and analytical systems to content management systems.
+---------------------------------------------------------------
+6. How many ways can you do query optimization
+->
+	There are broadly two ways a query can be optimized: 
+
+1) Analyze and transform equivalent relational expressions: Try to minimize the tuple and column counts of the intermediate and final query processes (discussed here).
+2) Using different algorithms for each operation: These underlying algorithms determine how tuples are accessed from the data structures they are stored in, indexing, hashing, data retrieval and hence influence the number of disk and block accesses (discussed in query processing).
+-----------------------------------------------------------
+7. If you can store only 3 digits in an Integer datatype then how will you solve 999+999
+------------------------------------------------------------
+Round 2
+----------
+----------
+1.How can you change a UI written in React to Angular with minimum change
+2. Enlist oops concepts
+3. Write a code for Inheritance for a given scenario
+4. Difference between abstract class and interface
+5. What should we use while writing professional code
+-----------------------------------------------------------
+6. What is classpath
+-> The ClassPath is a parameter in the Java Virtual Machine(JVM) or the Java compiler that is used by a system or application ClassLoader to locate and load compiled Java bytecodes stored in the “.class” file. On the other hand, The Path is also an environment variable path that behaves as a mediator between the operating system and developer to inform binary file path.
+--------------------------------------------------
+7. Write command to print class path
+->
+C:> echo %CLASSPATH%
+----------------------------------------------------------
+8. Why do we get ClassNotFoundException even when you have the .class file present
+-------------------------------------------------------
+9. What are packages? Why do we use them(ans: segregation and identification)
+
+---------------------------------------------------
+10. Details of how import statement works
+-> Import statement: 
+An import statement tells the compiler the path of a class or the entire package. It is unlike “#include” in C++, which includes the entire code in the program. Import statement tells the compiler that we want to use a class (or classes) that is defined under a package. It is pretty helpful and recommended over the “fully-qualified name” method as it reduces the overall code size and improves the source code’s readability.
+---------------------------------------------------------
+11. How does Java know to call which class if classes have similar path 
+
+-------------------------------------------------------
+12. Run and explain your project 
+13. Explain DB of your project 
+14. Have you used services of aws? Use it, you'll learn a lot
+15. Do you have any questions for me
+
+
+Round 3(project was booking system) 
+1. Explain your project
+2. What difference do you see between your project and book my show
+3. Design a booking system for meeting rooms in  an office(ask questions to understand the problem statement)
+4. Coding question
+5. Do you have any questions for me
+
+------------------------------------------------------------------
+Questions Asked in other Company :
+
+1) Explain Multithreading.
+
+
+2) Explain Delegates.
+
+
+3) Explain difference between equals & == operator.
+
+
+4) Explain final,finally,finalize().
+
+
+5) Explain stored procedure.
+
+
+6) Explain Object Pooling.
+
+
+7) Explain singleton class.
+
+
+8) Can destructor be overloaded?
+
+
+9) Explain Preprocessor in CSS.
+
+
+10) Explain selectors in CSS.
+
+
+11) What is Javascript.
+
+
+12) What is AJAX.
+
+
+13) What is JSON.
+
+
+14) Explain Dispatcher servlet.
+
+
+15) Explain Reflection.
+
+
+16) Difference between truncate & delete.
+
+
+17) Difference between == & ===.
+
+
+18) Difference between var & let keyword.
+
+
+19) What is ORM.
+
+
+20) Advantages of Hibernate over JDBC.
+
+
+21) Explain indexer.
+
+
+22) What is Collection.
+
+
+23) Difference between Hashset & treeset.

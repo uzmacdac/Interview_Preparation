@@ -1,0 +1,1189 @@
+
+
+Raja Software and labs Previous asked questions : 
+--------------------------------------------------------------
+
+1.Given an input year then the print year is either leap year or not leap year.
+
+----------------------------------------------------
+2.Fibonacci
+class GFG {
+  
+    // Function to print N Fibonacci Number
+    static void Fibonacci(int N)
+    {
+        int num1 = 0, num2 = 1;
+  
+        int counter = 0;
+  
+        // Iterate till counter is N
+        while (counter < N) {
+  
+            // Print the number
+            System.out.print(num1 + " ");
+  
+            // Swap
+            int num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+            counter = counter + 1;
+        }
+    }
+  
+    // Driver Code
+    public static void main(String args[])
+    {
+        // Given Number N
+        int N = 10;
+  
+        // Function Call
+        Fibonacci(N);
+    }
+}
+Output:
+0 1 1 2 3 5 8 13 21 34
+Time Complexity: O(N) 
+---------------------------------------
+class GFG {
+  
+    // Function to print the fibonacci series
+    static int fib(int n)
+    {
+        // Base Case
+        if (n <= 1)
+            return n;
+  
+        // Recursive call
+        return fib(n - 1)+ fib(n - 2);
+            
+    }
+  
+    // Driver Code
+    public static void
+    main(String args[])
+    {
+        // Given Number N
+        int N = 10;
+  
+        // Print the first N numbers
+        for (int i = 0; i < N; i++) {
+  
+            System.out.print(fib(i) + " ");
+        }
+    }
+}
+Output:
+0 1 1 2 3 5 8 13 21 34
+Time Complexity: O(2N)  
+--------------------------------------------
+class fibonacci {
+  
+    // Function to find the fibonacci Series
+    static int fib(int n)
+    {
+  
+        // Declare an array to store
+        // Fibonacci numbers.
+        // 1 extra to handle case, n = 0
+        int f[] = new int[n + 2];
+  
+        int i;
+  
+        // 0th and 1st number of
+        // the series are 0 and 1
+        f[0] = 0;
+        f[1] = 1;
+  
+        for (i = 2; i <= n; i++) {
+  
+            // Add the previous 2 numbers
+            // in the series and store it
+            f[i] = f[i - 1] + f[i - 2];
+        }
+  
+        // Nth Fibonacci Number
+        return f[n];
+    }
+  
+    public static void
+    main(String args[])
+    {
+        // Given Number N
+        int N = 10;
+  
+        // Print first 10 term
+        for (int i = 0; i < N; i++)
+            System.out.print(fib(i) + " ");
+    }
+}
+Output:
+0 1 1 2 3 5 8 13 21 34
+Time Complexity: O(N) 
+-----------------------------------------------------
+3.Prime n/ between a given interval
+public class GFG {
+ 
+    // driver code
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        // Declare the variables
+        int a, b, i, j, flag;
+ 
+        // Ask user to enter lower value of interval
+        System.out.printf("Enter lower bound of the interval: ");
+        a = sc.nextInt(); // Take input
+ 
+        // Ask user to enter upper value of interval
+        System.out.printf("\nEnter upper bound of the interval: ");
+        b = sc.nextInt(); // Take input
+ 
+        // Print display message
+        System.out.printf("\nPrime numbers between %d and %d are: ", a, b);
+ 
+        // Traverse each number in the interval
+        // with the help of for loop
+        for (i = a; i <= b; i++) {
+ 
+            // Skip 0 and 1 as they are
+            // neither prime nor composite
+            if (i == 1 || i == 0)
+                continue;
+ 
+            // flag variable to tell
+            // if i is prime or not
+            flag = 1;
+ 
+            for (j = 2; j <= i / 2; ++j) {
+                if (i % j == 0) {
+                    flag = 0;
+                    break;
+                }
+            }
+ 
+            // flag = 1 means i is prime
+            // and flag = 0 means i is not prime
+            if (flag == 1)
+                System.out.println(i);
+        }
+    }
+}
+Output: 
+ 
+
+Enter lower bound of the interval: 1
+Enter upper bound of the interval: 10
+Prime numbers between 1 and 10 are: 2 3 5 7 
+Optimized Solution : 
+The idea is to use the fact that even numbers (except 2) are not primes.
+
+
+import java.util.*;
+ 
+public class PrimeNumbersInRange {
+ 
+    // function which checks whether a number is Prime or Not
+    // If the number is prime, it returns true. Else, it returns false.
+    public static boolean isPrime(int n) {
+        // 0 and 1 are neither prime nor composite numbers
+        if (n == 0 || n == 1) {
+            return false;
+        }
+        // 2 is a prime number
+        if (n == 2) {
+            return true;
+        }
+        // every composite number has a prime factor
+        // less than or equal to its square root.
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+ 
+    }
+ 
+    // Driver code
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+ 
+        // Ask user to enter lower value of interval
+        System.out.print("Enter lower bound of the interval: ");
+        int lower = sc.nextInt(); // Take input
+ 
+        // Ask user to enter upper value of interval
+        System.out.print("\nEnter upper bound of the interval: ");
+        int upper = sc.nextInt(); // Take input
+ 
+        // Print display message
+        System.out.printf("\nPrime numbers between %d and %d are: ", lower, upper);
+ 
+        for (int i = lower; i <= upper; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        sc.close();
+    }
+}
+Output: 
+ 
+
+Enter lower bound of the interval: 1
+
+Enter upper bound of the interval: 10
+
+Prime numbers between 1 and 10 are: 2 3 5 7
+-------------------------------------------------------------
+ a)Anagram
+-> 
+class GFG {
+    public static boolean isAnagram(String a, String b)
+    {
+        // Check if length of both strings is same or not
+        if (a.length() != b.length()) {
+            return false;
+        }
+        // Create a HashMap containing Character as Key and
+        // Integer as Value. We will be storing character as
+        // Key and count of character as Value.
+        HashMap<Character, Integer> map = new HashMap<>();
+        // Loop over all character of String a and put in
+        // HashMap.
+        for (int i = 0; i < a.length(); i++) {
+            // Check if HashMap already contain current
+            // character or not
+            if (map.containsKey(a.charAt(i))) {
+                // If contains increase count by 1 for that
+                // character
+                map.put(a.charAt(i),
+                        map.get(a.charAt(i)) + 1);
+            }
+            else {
+                // else put that character in map and set
+                // count to 1 as character is encountered
+                // first time
+                map.put(a.charAt(i), 1);
+            }
+        }
+        // Now loop over String b
+        for (int i = 0; i < b.length(); i++) {
+            // Check if current character already exists in
+            // HashMap/map
+            if (map.containsKey(b.charAt(i))) {
+                // If contains reduce count of that
+                // character by 1 to indicate that current
+                // character has been already counted as
+                // idea here is to check if in last count of
+                // all characters in last is zero which
+                // means all characters in String a are
+                // present in String b.
+                map.put(b.charAt(i),
+                        map.get(b.charAt(i)) - 1);
+            }
+            else {
+                return false;
+            }
+        }
+        // Extract all keys of HashMap/map
+        Set<Character> keys = map.keySet();
+        // Loop over all keys and check if all keys are 0.
+        // If so it means it is anagram.
+        for (Character key : keys) {
+            if (map.get(key) != 0) {
+                return false;
+            }
+        }
+        // Returning True as all keys are zero
+        return true;
+    }
+    public static void main(String[] args)
+    {
+        String str1 = "gram";
+        String str2 = "arm";
+ 
+        // Function call
+        if (isAnagram(str1, str2))
+            System.out.print("The two strings are "
+                             + "anagram of each other");
+        else
+            System.out.print("The two strings are "
+                             + "not anagram of each other");
+    }
+}
+Output
+The two strings are not anagram of each other
+Time Complexity: O(N)
+Auxiliary Space: O(1), constant space is used
+----------------------------------------------------
+
+class GFG {
+
+	static int NO_OF_CHARS = 256;
+
+	/* function to check whether two strings
+	are anagram of each other */
+	static boolean areAnagram(char str1[], char str2[])
+	{
+		// Create 2 count arrays and initialize
+		// all values as 0
+		int count1[] = new int[NO_OF_CHARS];
+		Arrays.fill(count1, 0);
+		int count2[] = new int[NO_OF_CHARS];
+		Arrays.fill(count2, 0);
+		int i;
+
+		// For each character in input strings,
+		// increment count in the corresponding
+		// count array
+		for (i = 0; i < str1.length && i < str2.length;
+			i++) {
+			count1[str1[i]]++;
+			count2[str2[i]]++;          System.out.println(str1[i] +" -> "+count1[str1[i]]);
+		}
+
+		// If both strings are of different length.
+		// Removing this condition will make the program
+		// fail for strings like "aaca" and "aca"
+		if (str1.length != str2.length)
+			return false;
+
+		// Compare count arrays
+		for (i = 0; i < NO_OF_CHARS; i++)
+			if (count1[i] != count2[i])
+				return false;
+
+		return true;
+	}
+
+	/* Driver code*/
+	public static void main(String args[])
+	{
+		char str1[] = ("graam").toCharArray();
+		char str2[] = ("armga").toCharArray();
+
+		// Function call
+		if (areAnagram(str1, str2))
+			System.out.println("The two strings are"
+							+ " anagram of each other");
+		else
+			System.out.println("The two strings are not"
+							+ " anagram of each other");
+	}
+}
+
+
+-------------------------------------------------
+class GFG {
+ 
+    /* function to check whether two strings are
+    anagram of each other */
+    static boolean areAnagram(char[] str1, char[] str2)
+    {
+        // Get lengths of both strings
+        int n1 = str1.length;
+        int n2 = str2.length;
+ 
+        // If length of both strings is not same,
+        // then they cannot be anagram
+        if (n1 != n2)
+            return false;
+ 
+        // Sort both strings
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+ 
+        // Compare sorted strings
+        for (int i = 0; i < n1; i++)
+            if (str1[i] != str2[i])
+                return false;
+ 
+        return true;
+    }
+ 
+    /* Driver Code*/
+    public static void main(String args[])
+    {
+        char str1[] = { 'g', 'r', 'a', 'm' };
+        char str2[] = { 'a', 'r', 'm' };
+       
+        // Function Call
+        if (areAnagram(str1, str2))
+            System.out.println("The two strings are"
+                               + " anagram of each other");
+        else
+            System.out.println("The two strings are not"
+                               + " anagram of each other");
+    }
+}
+-------------------------------------------------------
+b) Prime no. till n.
+
+
+// Java program to print
+// all primes less than N
+class GFG {
+    // function check whether
+    // a number is prime or not
+    static boolean isPrime(int n)
+    {
+        // Corner case
+        if (n <= 1)
+            return false;
+ 
+        // Check from 2 to n-1
+        for (int i = 2; i < n; i++)
+            if (n % i == 0)
+                return false;
+ 
+        return true;
+    }
+ 
+    // Function to print primes
+    static void printPrime(int n)
+    {
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i))
+                System.out.print(i + " ");
+        }
+    }
+ 
+    // Driver Code
+    public static void main(String[] args)
+    {
+        int n = 7;
+        printPrime(n);
+    }
+}
+ 
+// This code is contributed
+// by ChitraNayal
+Output: 
+ 
+
+
+2 3 5 7
+Time Complexity: O(N * N)
+A better approach is based on the fact that one of the divisors must be smaller than or equal to √n. So we check for divisibility only till √n. 
+ 
+
+---------------------------------------------------------
+// Java program to print
+// all primes less than N
+import java.io.*;
+ 
+class GFG
+{
+ 
+// function check
+// whether a number
+// is prime or not
+static boolean isPrime(int n)
+{
+    // Corner cases
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+ 
+    // This is checked so
+    // that we can skip
+    // middle five numbers
+    // in below loop
+    if (n % 2 == 0 ||
+        n % 3 == 0)
+        return false;
+ 
+    for (int i = 5;
+             i * i <= n; i = i + 6)
+        if (n % i == 0 ||
+            n % (i + 2) == 0)
+            return false;
+ 
+    return true;
+}
+ 
+// Function to print primes
+static void printPrime(int n)
+{
+    for (int i = 2; i <= n; i++)
+    {
+        if (isPrime(i))
+            System.out.print(i + " ");
+    }
+}
+ 
+// Driver Code
+public static void main (String[] args)
+{
+    int n = 7;
+    printPrime(n);
+}
+}
+ 
+// This code is contributed
+// by anuj_67.
+Output: 
+2 3 5 7
+ 
+
+Time Complexity: O(N3/2)
+--------------------------------------------------------
+c) Non duplicate int from the list.
+
+
+------------------------------------------------------------
+a)Digits of int ae in ascending or descending or not specified. Ex: 1378 - acs order, 743 - desc order, 3574 - no specific order
+-> 
+public class DigitProgram 
+{
+
+	public static void printArray(int[] a,int size)
+	{
+		System.out.print("Array element are : ");
+		for(int i=0 ; i<size ; i++)
+		{
+			System.out.print(a[i]+"  ");
+		}
+	}
+	public static void digitOrder(int n)
+	{
+		boolean isAscending = false ;
+		boolean isDescending = false ;
+		String str = Integer.toString(n);
+		int size = str.length();
+		int[] arr = new int[size];
+		for(int i=size-1 ;i>=0 ; i-- )
+		{
+			arr[i] = n%10;
+		//	System.out.println("arr["+i+"] = "+ arr[i]);
+			n = n/10 ;
+		}
+		//printArray(arr,size);
+	
+		for(int i=0 ; i<size-1 ; i++)
+			{
+				
+					if(arr[i]<arr[i+1] )
+					{
+						isAscending = true ;
+						//System.out.println(arr[i] +" "+ flag);
+					}
+					else
+					{
+						isAscending = false;
+						break;
+					}
+								
+			}
+					
+			for(int i=0 ; i<size-1 ; i++)
+			{
+					if(arr[i]>arr[i+1])
+					{
+						isDescending = true ;
+						//System.out.println(arr[i] +" "+ flag);
+					}
+					else
+					{
+						isDescending = false ;
+						break;
+					}
+									
+			}
+			
+			if(isAscending == true )
+			{
+				System.out.println("\nDigit are in ascending order .");
+			}
+			else if(isDescending == true )
+			{
+				System.out.println("Digit are in descending order .");
+			}
+			else
+			{
+				System.out.println("Digit are not in specific order");
+			}
+			
+	}
+		
+	
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number : ");
+		int n1 = sc.nextInt();
+		digitOrder(n1);
+		
+		/*
+		System.out.println();
+		System.out.print("Enter number : ");
+		int n2 = sc.nextInt();
+		digitOrder(n2);
+
+		System.out.println();
+		System.out.print("Enter number : ");
+		int n3 = sc.nextInt();
+		digitOrder(n3);
+		*/
+
+	}
+
+}
+
+
+------------------------------------------------------
+b)List of marks are there, Tell the rank of the entered new mark. Ex: Marks List: {39, 38, 38, 36, 34, 31, 28}, if added mark is: 38: Rank2, 37:Rank3, 36:Rank2
+->
+public class MarksAndRank 
+{
+
+	//List of marks are there, Tell the rank of the entered new mark. 
+	//Ex: Marks List: {39, 38, 38, 36, 34, 31, 28}, 
+	//if added mark is : 38->Rank2  ,  37->Rank3  ,  36->Rank2
+	
+	static HashMap<Integer,Integer> map = new HashMap<>();
+	public static void sort(int[] a)
+	{
+		// sorting with help of insertion sort 
+		
+		int size = a.length ;
+		for(int i=0 ; i<size ; i++)
+		{
+			int key = a[i] ;
+			int j = i-1 ;
+			/* Move elements of arr[0..i-1], that are
+            greater than key, to one position ahead
+            of their current position */
+			while(j>=0 && a[j]>key)
+			{
+				a[j+1] = a[j];
+				j = j - 1;
+			}
+			a[j+1]= key ;
+		}
+	
+		
+		 System.out.print("Array Sorted : ");
+		 for(int i=0 ; i<size ; i++)
+		{
+			System.out.print(a[i]+"  ");
+		}
+		
+	}
+	public static void rank(int[] a)
+	{
+		int size = a.length;
+		for(int i=0 ; i<size ; i++)
+		{
+			map.put(a[size-i-1] , i+1);
+			//System.out.println(map.get(a[size-i-1]));
+		}
+		
+		
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("\nEnter size of array : ");
+		int size = sc.nextInt();
+		
+		int[] a = new int[size];
+		System.out.print("\nEnter array element : ");
+		for(int i=0 ; i<size ; i++ )
+		{
+			a[i] = sc.nextInt();
+		}
+		
+		//int[] a = {39 , 38 , 11 , 36 , 34 , 31 , 28};
+		sort(a);
+		rank(a);
+		System.out.print("\nEnter marks : ");
+		int mark = sc.nextInt();
+		System.out.println("marks = "+mark+" -> Rank "+map.get(mark));
+	}
+
+}
+
+***********************************************************************************************
+1) Nearest prime numbers which are at minimum distance, if there are two prime numbers which are at equidistance from the given prime number then print both the prime numbers.
+
+-> 
+import java.util.Scanner;
+import java.util.Stack;
+
+public class PrimeNumber
+{
+	 // declaring stack 
+	static Stack<Integer> s = new Stack<Integer>();
+	
+	
+	public static void againCheckPrime(int prev ,int next , int n)
+	{
+		boolean checkPrime = true;
+		for(int i =2 ; i<next ; i++)
+		{
+			// check next is prime number or not 
+			if(next%i == 0 )
+			{
+				checkPrime = false;
+			}
+		}
+		if(checkPrime == true)
+		{
+			// To find the nearest prime numbers which are at equidistance from given prime number
+			// we just push the
+			s.push(prev);
+			s.push(next);
+		//	System.out.println("The Prime number "+n+" is at equdistance of prime numbers "+prev+ " , "+next);
+		
+			//System.out.println("The Prime number "+n+" is at equdistance of prime numbers "+s.pop()+ " , "+s.pop());
+
+		}
+
+	}
+	public static void equidistancePrime(int n)
+	{
+		boolean flag = false ;
+		int dist = 0;
+		int next = 0 ;
+		for(int i=2 ; i<n ; i++)
+		{
+			// finding all prime number upto n(prime number) 
+			for(int j=2 ; j<n ; j++)
+			{
+				// check whether or not i is prime number 
+				if(i%j !=0 )
+				{
+					flag = true;
+				}
+				else if(i == j)
+				{
+					continue;
+				}
+				else 
+				{
+					flag = false;
+					break;
+				}
+			}
+			if(flag == true)
+			{
+				// if number is prime then find distance from the number(calculated prime number)
+				// to given prime number , and stored in dist variable 
+				dist = n - i ;
+				
+				// Once the dist (distance) is found ,add the dist in given n prime number and stored in next
+				// so we get an equidistance number ,now to check next is prime or not 
+				next = n + dist ;
+				
+				// Adding i in stack (prevoius prime number )
+				
+				
+				// Calling the method to check next is prime or not 
+				againCheckPrime(i,next,n);
+				//System.out.println("The Prime number "+n+" is at equdistance of prime numbers "+s.pop()+ " , "+s.pop());
+
+			}
+		}
+	} 
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Prime number : ");
+		int n1 = sc.nextInt();
+		equidistancePrime(n1);
+		System.out.println("The Prime number "+n1+" is at equdistance of prime numbers "+s.pop()+ " , "+s.pop());
+
+	}
+
+}
+
+
+
+
+------------------------------------------------------
+2) Fibonacci series using recursion
+class fibonacci {
+    static int fib(int n)
+    {
+        if (n <= 1)
+            return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+ 
+    public static void main(String args[])
+    {
+        int n = 9;
+        System.out.println(fib(n));
+    }
+}
+------------------------------------------------------
+3) find two consecutive no in array which have maximum sum
+->
+public class ArrayQ 
+{
+	// find two consecutive no in array which have maximum sum
+	
+	public static void consecutiveSumOftwoArray(int[] a )
+	{
+		int size = a.length;
+		int maxSum = 0 ;
+		int sum = 0 ;
+		int i =0;
+		int x=0 ;
+		int y=0 ;
+		for( i=0 ;i< size-1 ; i++)
+		{
+			sum = a[i]+a[i+1];
+			System.out.println("sum = "+sum);
+			if(maxSum < sum)
+			{
+				maxSum = sum ;
+				x=a[i];
+				y=a[i+1];
+				
+				System.out.println("maxSum = "+maxSum);
+			}
+			
+		}
+			System.out.println("Two Consecutive Array element are -> "+x+" , "+y);
+	}
+	
+	public static void main(String[] args)
+	{
+
+		Scanner sc = new Scanner(System.in);
+	
+		System.out.print("\nEnter size of array1 : ");
+		int size1 = sc.nextInt();
+		
+		int[] arr1 = new int[size1];
+		System.out.print("\nEnter array element : ");
+		for(int i=0 ; i<size1 ; i++ )
+		{
+			arr1[i] = sc.nextInt();
+		}
+		
+		consecutiveSumOftwoArray(arr1);
+		
+		
+	}
+}
+
+-------------------------------------------------
+4) find repeating numbers in an array
+******Find the two repeating elements in a given array using********
+class GFG {
+ 
+    static void printRepeating(int arr[], int size)
+    {
+        HashSet<Integer> s = new HashSet<>();
+        System.out.print("Repeating elements are ");
+        for (int i = 0; i < size; i++) {
+            if (!s.isEmpty() && s.contains(arr[i]))
+                System.out.print(arr[i] + "  ");
+            s.add(arr[i]);
+        }
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        int arr[] = { 4, 2, 4, 5, 2, 3, 1 };
+        int arr_size = arr.length;
+        printRepeating(arr, arr_size);
+    }
+}
+Output
+Repeating elements are 4  2  
+Time Complexity: O(N), Traversing over the array of size N.  
+Auxiliary Space: O(N), Space used to store the elements in the hash set
+---------------------------------------------
+class GFG {
+ 
+    public static void twoRepeated(int arr[], int N)
+    {
+        int m = N - 1;
+        for (int i = 0; i < N; i++) {
+            arr[arr[i] % m - 1] += m;
+ 
+            if ((arr[arr[i] % m - 1] / m) == 2)
+                System.out.print(arr[i] % m + " ");
+        }
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        int arr[] = { 4, 2, 4, 5, 2, 3, 1 };
+        int n = 7;
+        System.out.print("Repeating elements are ");
+        twoRepeated(arr, n);
+    }
+}
+ 
+// This code is contributed by Aditya Kumar (adityakumar129)
+Output
+Repeating elements are 4 2 
+Time Complexity: O(N), Traversing over the array of size N. 
+Auxiliary Space: O(1) 
+
+-------------------------------------------
+class RepeatElement {
+    void printRepeating(int arr[], int size)
+    {
+        int count[] = new int[size];
+        int i;
+ 
+        System.out.print("Repeating elements are ");
+        for (i = 0; i < size; i++) {
+            if (count[arr[i]] == 1)
+                System.out.print(arr[i] + " ");
+            else
+                count[arr[i]]++;
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        RepeatElement repeat = new RepeatElement();
+        int arr[] = { 4, 2, 4, 5, 2, 3, 1 };
+        int arr_size = arr.length;
+        repeat.printRepeating(arr, arr_size);
+    }
+}
+ Repeating elements are 4 2 
+Time Complexity: O(N), Traversing the array of size N
+Auxiliary Space: O(N), Count array of size N to keep track of elements
+---------------------------------------
+class RepeatElement {
+    void printRepeating(int arr[], int size)
+    {
+        int i, j;
+        System.out.print("Repeating Elements are ");
+        for (i = 0; i < size - 1; i++) {
+            for (j = i + 1; j < size; j++) {
+                if (arr[i] == arr[j])
+                    System.out.print(arr[i] + " ");
+            }
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        RepeatElement repeat = new RepeatElement();
+        int arr[] = { 4, 2, 4, 5, 2, 3, 1 };
+        int arr_size = arr.length;
+        repeat.printRepeating(arr, arr_size);
+    }
+}
+Repeating elements are 4 2 
+Time Complexity: O(N*N), Iterating over the array of size N for all the N elements.
+Auxiliary Space: O(1)
+----------------------------------------------------
+5) convert string into number without using inbuilt function
+public class ArrayQ 
+{
+	//5) convert string into number without using inbuilt function
+
+	public static void stringIntoNum(char[] a )
+	{
+		int size = a.length;
+		
+		// char a[j] = {'1','2','3'}  ,ascii value of '0'=48 , '1'=49 , '2'=50 ...
+		
+			System.out.print("conversion of string to num : ");
+			for(int j=0 ; j<size ; j++ )
+			{									// int('1')-> 49
+				int num = (int)a[j]-48;    		// num = 49-48 = 1
+				System.out.print(num);
+			}
+	}
+	
+	public static void main(String[] args)
+	{
+
+		Scanner sc = new Scanner(System.in);
+	
+		System.out.print("\nEnter string : ");
+		String s = sc.next();
+		
+		char[] arr1 = s.toCharArray();
+	
+		stringIntoNum(arr1);
+	
+	}
+}
+-------------------------------------------------------------------
+6) check whether string is cyclic or not
+
+---------------------------------------------------------
+7) Find the max distance between indexes of duplicate values from an array.
+class GFG
+{
+ 
+    // Function to find maximum distance between equal elements
+    static int maxDistance(int[] arr, int n)
+    {
+        // Used to store element to first index mapping
+        HashMap<Integer, Integer> map = new HashMap<>();
+         
+        // Traverse elements and find maximum distance between
+        // same occurrences with the help of map.
+        int max_dist = 0;
+ 
+        for (int i = 0; i < n; i++)
+        {
+            // If this is first occurrence of element, insert its
+            // index in map
+            if (!map.containsKey(arr[i]))
+                map.put(arr[i], i);
+ 
+            // Else update max distance
+            else
+                max_dist = Math.max(max_dist, i - map.get(arr[i]));
+        }
+ 
+        return max_dist;
+}
+ 
+// Driver code
+public static void main(String args[])
+{
+    int[] arr = {3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2};
+    int n = arr.length;
+    System.out.println(maxDistance(arr, n));
+}
+}
+Output : 10
+------------------------------------------------------------
+public class ArrayQ 
+{
+	//7)Find the max distance between indexes of duplicate values from an array.
+
+	public static void maxDistance(int[] a )
+	{
+		int size = a.length;
+		int distance = 0;
+		int initialDis = 0 ;
+		Map<Integer ,Integer> map = new  HashMap<Integer ,Integer>();
+		for(int i=0 ; i<size ; i++)
+		{
+		
+			initialDis = i;
+			for(int j=i+1 ; j<size ; j++)
+			{
+				if(a[i] == a[j])
+				{
+			
+					//map.put(a[i],j-initialDis);
+					//System.out.print(j-i+"  ");
+					map.put(a[i] , j-i);
+				}
+			
+			}
+		}
+		for (Map.Entry<Integer,Integer> entry : map.entrySet()) 
+            System.out.println("num = " + entry.getKey() +
+                             ", max = " + entry.getValue());
+	}
+	
+	public static void main(String[] args)
+	{
+
+		Scanner sc = new Scanner(System.in);
+
+		
+		System.out.print("\nEnter size of array1 : ");
+		int size1 = sc.nextInt();
+		
+		int[] arr1 = new int[size1];
+		System.out.print("\nEnter array element : ");
+		for(int i=0 ; i<size1 ; i++ )
+		{
+			arr1[i] = sc.nextInt();
+		}
+	
+		maxDistance(arr1);
+	
+	}
+}
+Input:
+Enter size of array1 : 8
+
+Enter array element : 1 2 3 4 5 6 2 1
+Output
+num = 1, max = 7
+num = 2, max = 5
+
+------------------------------------------------------------------------------------
+8) Find rank of students besed on marks there was given marks of 10 students
+
+---------------------------------------------------------------
+
+9) count pairs in array map implementation
+
+-------------------------------------------------------------------------
+10) Check whether the vowels in a string are in alphabetical order or not
+
+
+
+**************************************************************************************
+Considering all rounds the questions were
+1.print the sum of elements of lower triangular matrix
+
+----------------------------------------------------------------------------------------------
+2.binary array was given we have to sort it with using another array or any sorting algorithm
+
+-----------------------------------------------------------------------------------
+3.convert string into number without using inbuilt function
+
+-----------------------------------------------------------------
+4.print the closet prime number of a given number
+
+--------------------------------------------------------------
+5 convert binary to decimal using recursion
+
+
+
+*
+***********************************************************************************
+1) Nearest Prime no.
+
+----------------------------------------------------
+2) binary to decimal using recusion
+
+-------------------------------------------------------
+3) merge two given arrays and return the resultant array.
+
+----------------------------------------------------------------
+4) Balance the given string of parenthesis
+
+
+
+*************************************************************************
+1)find the angle between hour hand and minute hand according to given time.
+
+
+---------------------------------------------------------------
+2)find nearest prime no of a given number.
+
+---------------------------------------------------------------
+3)check whether string is cyclic or not
+
+----------------------------------------------------------------
+4)String is anagram or not with space complexity constant
+Word Wrap
+
+--------------------------------------------------------------------------
+5)Find the mid 4 characters of a string
+
+
+---------------------------------------------------------------------------
+6)count duplicates, palindrome string, give pairs in array
+
+-------------------------------------------------------------
+7)find the no.is odd or even by using only bitwise operator
+count the number of different bits present in two integer number using bitwise operators

@@ -1,0 +1,207 @@
+
+What do you mean by Data Structures?
+
+Explain self-referential structure? Explain its need?
+
+List out the areas in which data structures are applied extensively?
+
+Write binary search algorithm with and without recursion?
+
+Explain the data structures used to perform recursion?
+
+How to write a program to implement merge sort?
+
+How to write a program to implement quick sort?
+
+Sorting is not possible by using which of the following methods? 
+(Insertion, Selection, Exchange, Deletion)
+
+Explain stack? Which are the applications of stack?
+
+Convert a given infix expression into postfix and then evaluate it. (Write code)
+
+Explain queue? Which are the types of queue?
+
+Explain the queue full condition for circular queue?
+
+Write in brief the method to implement two stacks using single array?
+
+How can we implement stack and queue using linked list?
+
+Which are the shortcomings of array over linked list?
+
+Explain linked list?
+
+How to write a program to reverse linked list?
+
+How can we reverse linked list using single pointer? Write a program.
+
+If you are using C language to implement the heterogeneous linked list, what pointer type will you use?
+
+How to detect whether linked list is linear or circular?
+
+How to write a program to create heterogeneous linked list?
+
+Find out address of middle node in single traversal?
+
+Explain hash table? Explain hash function? How is it designed?
+
+Explain collision and how to handle it?
+
+Explain bucket? Explain load factor?
+
+Explain binary search tree?
+
+Minimum number of queues needed to implement the priority queue?
+
+Define the notations used in Evaluation of Arithmetic Expressions using prefix and postfix forms?
+
+Convert he expression ((A=B)*C-(D-E)^(F+G)) to equivalent Prefix and Postfix notations.
+
+Define the methods available in storing sequential files?
+
+Write in brief tree traversal techniques?
+
+Which are the types of tree? Write in brief in brief?
+
+Explain AVL tree?
+
+Explain BFS and DFS?
+
+List out few of the Application of tree data structure?
+
+List out few of the applications that make use of multilinked structures?
+
+In tree construction which is the suitable efficient data structure? (Array, Linked list, Stack, Queue)
+
+Explain the type of the algorithm used in solving the 8 Queens problem?
+
+In an AVL tree, at what condition the balancing is to be done?
+
+Does the minimum spanning tree of a graph give the shortest distance among any 2 specified nodes?
+
+Which is the simplest file structure? (Sequential, Indexed, Random)
+
+Whether Linked List is linear or Non-linear data structure?
+
+Explain the difference among the HEAP and the STACK?
+
+Write in brief the data structures of a double linked list.
+
+How do you insert a record among two nodes in double linked list?
+
+In which data structure, elements can be added or removed at either end, but not in the middle?
+
+Which one is faster? A binary search of a ordered set of elements in an array or a sequential search of 
+elements?
+
+Explain a balanced tree?
+
+Which data structure is needed to convert infix notations to post fix notations?
+
+Which data structures can we implement using linked list?
+
+
+
+Explain the bucket size, when the overlapping and collision occur at same time?
+
+Classify the Hashing functions based on the various methods by which the key value is found
+
+Define the types of Collision Resolution Techniques and the methods used in each of the type?
+
+In RDBMS, Explain the efficient data structure used in the internal storage representation in DB module?
+
+List different types of data structures.
+
+Find nth last node in linked list in one iteration.
+
+Explain The Difference Among A Stack And An Array?
+
+What Do You Mean By Recursive Definition?
+
+Define The Benifits Of Linked List Over Array (static Data Structure)?
+
+We Apply Binary Search Algorithm To A Sorted Linked List, Why?
+
+Define The DisBenifits Array Implementations Of Linked List?
+
+Define The DisBenifits Of Representing A Stack Or Queue By A Linked List?
+
+Is It Necessary To Sort A File Before Searching A Particular Item ?
+
+Parenthesis Is Never Required In Postfix Or Prefix Expressions, Why?
+
+ List Out The Areas In Which Data Structures Are Applied Extensively?
+
+ Explain The Data Structures Used To Perform Recursion?
+
+List Out Few Of The Application Of Tree Data-structure?
+
+There Are 8, 15, 13, 14 Nodes Were There In 4 Different Trees. Which Of Them 
+
+Could Have Formed A Full Binary Tree?
+
+Explain A Spanning Tree?
+
+ Difference Among Calloc And Malloc ?
+
+Why Do We Use A Multidimensional Array?
+
+Explain The Difference Among Null And Void Pointer?
+
+Explain The Difference Among Array And Stack?
+
+Tell How To Check Whether A Linked List Is Circular ?
+
+How Can I Search For Data In A Linked List?
+
+Define The Goals Of Data Structure?
+
+What Does Abstract Data Type Mean?
+
+What Do You Mean By Shortest Path?
+
+State the difference Among Primitive And Non-primitive Data Types?
+
+Define The Types Of Queues?
+
+List The Applications Of Queues?
+
+Define minimum number of Queues needed to implement the priority queue?
+
+When can you tell that a Memory Leak will occur?
+
+How do signed and unsigned numbers affect memory?
+
+State The Different Types Of Linked Lists?
+
+List The Basic Operations Carried Out In A Linked List?
+
+Write the syntax in C to create a node in the singly linked list.
+
+Can we apply Binary search algorithm to a sorted Linked list?
+
+How do you search for a target key in a linked list?
+
+How does selection sort work?
+
+Briefly write in brief the approaches to develop algorithms.
+
+Which data structure is ideal to perform Recursion operation and why?
+
+Explain tower of hanoi?
+
+Explain interpolation search technique?
+
+Explain hashing?
+
+Explain merge sort and how it works?
+
+Explain shell sort?
+
+List some applications of Tree-data structure?
+
+Why it is said that searching a node in a binary search tree is efficient than that of a simple binary tree?
+
+
+Define the applications of Graph data structure?
